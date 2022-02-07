@@ -36,7 +36,7 @@ var responsiveSlider = function() {
     };
     setInterval(function() {
       nextSlide()
-    }, 10000);
+    }, 2000);
     
     };
     window.onload = function() {

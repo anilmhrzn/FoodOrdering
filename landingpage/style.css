@@ -146,6 +146,7 @@
   height: 60vh;
   padding: 0;
   margin: 0;
+  border: 1px;
 }
 #slider ul {
   position: relative;
@@ -176,7 +177,7 @@
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 .categories-button {
   font-size: larger;
@@ -185,8 +186,28 @@
 }
 .categories-button:hover {
   transform: scale(1.2);
-  color: rgb(82, 80, 80);
+  /* background-color: rgb(167, 167, 167); */
+  color: #00203fff;
   cursor: pointer;
+}
+/* if clicked in given option of categories */
+.catedories-section{
+background-color:  rgb(167, 167, 167);
+display: none;
+}
+.show-categories-section{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto  ;
+  grid-gap: 10px;
+  padding: 20px;
+  position: sticky;
+  top: 84px;
+}
+/* .bgColorNone{
+  background-color: none;
+} */
+.box{
+ background-color: white;
 }
 /* #slider #prev,
 #slider #next {

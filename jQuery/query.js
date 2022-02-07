@@ -30,3 +30,22 @@ function closeNewPanel() {
   element3 = document.getElementById("content-except-register-form");
   element3.style.filter = "blur(0px)";
 }
+//for categories section
+var flagForBgColor=false;
+function show(id){
+  // if(flagForBgColor==true){
+    document.getElementById('appetizers').style.backgroundColor='transparent';
+    document.getElementById('mainCourse').style.backgroundColor='transparent';
+    document.getElementById('dessert').style.backgroundColor='transparent';
+    document.getElementById('drinks').style.backgroundColor='transparent';
+    console.log('hello')
+  // }
+  element=document.getElementById(id);
+  element.style.backgroundColor="rgb(167, 167, 167)";
+  showCategories();
+  // flagForBgColor=true;
+}
+function showCategories(){
+  element=document.getElementById('appetizers-section');
+  element.classList.add('show-categories-section');
+}
