@@ -3,13 +3,21 @@
   margin: 0;
   padding: 0;
 }
-.body-content {
+/*.body-content and .body-content::-webkit-scrollbar is for none scrollable content */
+/* .body-content {
   overflow-y: scroll;
   overflow-x: hidden;
 }
 .body-content::-webkit-scrollbar {
   display: none;
+} */
+.hideScrollBar{
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
+.hideScrollBar::-webkit-scrollbar {
+  display: none;
+} 
 #navbar {
   position: sticky;
   top: 0px;
@@ -17,7 +25,6 @@
   width: 100%;
   height: 10vh;
   background: #00203fff;
-  /* background-color: #3f4f4f; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,11 +84,6 @@
 .button:hover {
   transform: scale(1.1);
 }
-/* #middle-body { */
-/* background-color: rgb(187, 246, 220); */
-/* border-bottom: 1px solid black; */
-/* } */
-
 .grid-item {
   display: grid;
   grid-column: 2;
@@ -95,14 +97,7 @@
   height: 5vw;
   margin: auto;
   margin-top: -5px;
-  /* padding: 20px; */
   width: 30vw;
-  /* background-color: blue; */
-  /* background-image: url("./../images/foodImages/search.jpg");
-  background-size: cover;
-  /* background-position:-30px; */
-  /* background-position: right -9vw bottom 2vh;  */
-  /* border-radius: 100%; */
   border-radius: 20px;
 }
 #searchbar input {
@@ -130,7 +125,7 @@
   padding: 10px;
   color: #adefd1ff;
   border-radius: 100%;
-  transition: transform 0.1s;
+  transition: transform 0.5s ease-in-out;
 }
 .search-icon:hover {
   cursor: pointer;
@@ -172,80 +167,59 @@
 #categories-bar {
   position: sticky;
   top: 10vh;
-  background-color: #adefd1ff;
-  margin-top: 4vh;
+  background-color: white;
+  padding: 5px 0 5px 4vh;
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  /* border-radius: 10px; */
+  border: 1px solid;
+  font-weight: bolder;
+  z-index: 1;
 }
 .categories-button {
   font-size: larger;
   padding: 0 2vw;
   transition: transform 0.1s;
+  z-index: 1;
+  color: #00203fff;
 }
 .categories-button:hover {
   transform: scale(1.2);
-  /* background-color: rgb(167, 167, 167); */
-  color: #00203fff;
+  color:green;
   cursor: pointer;
+  z-index: 1;
 }
-/* if clicked in given option of categories */
-.catedories-section{
-background-color:  rgb(167, 167, 167);
-display: none;
+.catedories-section {
+  display: none;
 }
-.show-categories-section{
+/* if clicked in given option of categories show a cliked category*/
+.show-categories-section {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto  ;
+  grid-template-columns: 25vw 25vw 25vw 25vw;
   grid-gap: 10px;
-  padding: 20px;
-  position: sticky;
-  top: 84px;
+  padding: 4vh 50px;
+  background-color: #85dcb8;
 }
-/* .bgColorNone{
-  background-color: none;
-} */
-.box{
- background-color: white;
+.box {
+  background-color: white;
 }
-/* #slider #prev,
-#slider #next {
-  width: 50px;
-  line-height: 50px;
-  border-radius: 50%;
-  font-size: 2rem;
-  color: black;
-  text-decoration: none;
-  position: relative;
-  top: -50%;
-  transform: translateY(-50%);
-  transition: all 150ms ease;
-  z-index: 7;
-} */
-/* #slider #prev {
-  left: 3vw;
+.box:hover{
+  background-color: #00203fff;
+  color: white;
 }
-#slider #next {
-  right: -40vw;
-} */
-/* #slider #prev:hover,
-#slider #next:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  text-shadow: 0;
-} */
-/* #slider {
-  position: relative;
-  width: 100%;
-  
-  height: 80vh;
+.imgFoodSection {
   overflow: hidden;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  border-radius: 5px 50px 5px;
 }
-
-/* .order-now:hover {
-  cursor: pointer;
-} */
+.imageOfFoods {
+  width: 100%;
+  transition: transform 1s ease-in-out;
+  z-index: 10000;
+}
+.imageOfFoods:hover {
+  transform: scale(1.5);
+  z-index: -1;
+}
 #companyname:hover,
 #login:hover,
 #register:hover {
@@ -254,8 +228,6 @@ display: none;
 }
 /* for footer */
 .formarginTB {
-  /* position: absolute;
-  left: 60%; */
   margin: 20px 0 0 0;
   font-size: 1.2rem;
   padding: 10px;
@@ -263,26 +235,34 @@ display: none;
 .footerContactUsAndConnect {
   height: 37vh;
   padding-bottom: 10px;
+  background-image: none;
 }
 #connectWithUs {
   border-right: 2px solid #adefd1ff;
 }
 /* last for register */
+.content-except-register-form{
+  overflow-x: hidden;
+}
 #registration-components {
   position: fixed;
+  /* position: none; */
   top: 16vh;
-  height: auto;
+  height: 50vh;
   width: 30vw;
-  border: 1px solid black;
   border-radius: 5px;
   background-color: white;
   padding: 4vw 2vw 0 2vw;
+  background-color: white;
+  border: 1px solid black;
+  overflow-y:scroll ;
   z-index: 1;
 }
 #for-form {
-  display: flex;
+  display: none;
+  /* display: flex;
   justify-content: center;
-  visibility: hidden;
+  visibility: hidden; */
 }
 .icon-close {
   position: absolute;
@@ -295,10 +275,10 @@ display: none;
   transform: scale(1.5);
 }
 
-.transitionClass {
+/* .transitionClass {
   /* opacity: 1; */
-  visibility: visible;
-}
+  /* visibility: visible; */
+/* } */ 
 
 .avatar {
   position: fixed;
@@ -316,6 +296,11 @@ display: none;
   border: 1px solid black;
   outline: none;
 }
+.component{
+  margin-top: 4vh;
+  /* height: 8vh; */
+  /* padding: 4vh 0; */
+}
 #submit {
   position: relative;
   top: 3vh;
@@ -324,3 +309,4 @@ display: none;
   margin-bottom: 2vh;
   background-color: #adefd1ff;
 }
+

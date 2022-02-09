@@ -1,29 +1,289 @@
+<!-- Sailor Blue (#00203FFF) and Mint (#ADEFD1FF) -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #forGrid{
-display: grid;
+  <title>Document</title>
+  <!-- for jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- for font -->
+  <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet" />
+  <!-- for icon -->
+  <script src="https://kit.fontawesome.com/14a21296be.js" crossorigin="anonymous"></script>
+  <!-- for css -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- for my own js -->
+  <script src="./../jQuery/query.js">
 
-        }
-        .box{
-            width:20vw;
-            background-color: aqua;
-            height: 20vw;
-        }
-    </style>
+
+  </script>
+  <script src="./../jQuery/jsForImgSlider.js"></script>
 </head>
-<body>
-    <div id="forGrid">
 
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+<body id="main-body" class="body-content" >
+  <!-- id="main-body" and class="body-content" is used in js for blocking scroll feature while registraion form is opened  -->
+  <div id="content-except-register-form" >
+    <!--this is used in js for background blur while registration form is opened by user  making whole webpage blur except registration form box-->
+    <nav id="navbar">
+      <!--this is for navigation bar-->
+      <b id="companyname" class="company-name"> Food Paradise </b>
+      <ul id="nav-right-side">
+        <!--this is for right side part of navigation bar such as username , password , login and register-->
+        <li class="inputBlock">
+          <i class=" far fa-user icon"></i> <!-- this is for icon -->
+          <input type="text" name="username" id="username" class="inputTag" placeholder="Username"
+            style="margin-right: 10px;" />
+        </li>
+        <li class="inputBlock">
+          <i class="fas fa-key icon"></i>
+          <input type="text" name="password" id="password" class="inputTag" placeholder="Password" />
+        </li>
+        <li class="inputBlock">
+          <input type="button" id="login" value="login" onclick="functionname();" class="button" />
+        </li>
+        <li class="inputBlock">
+          <input type="button" value="register" onclick="newPanel();" id="register" class="button" />
+        </li>
+      </ul>
+    </nav>
+    <div id="middle-body">
+
+      <div id="main-content" class="grid-item">
+        <!-- <div> -->
+        <p>
+          hungry? <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Hic, nostrum nesciunt rem, numquam veritatis fuga at obcaecati sed
+          sunt ut saepe vero nemo enim. Nostrum tempora fugiat aspernatur fuga
+          inventore.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id quia, a ad dolorem at atque. Est vel blanditiis adipisci corrupti dignissimos, ipsam sequi dolorum vitae voluptate sunt vero porro eum dolore beatae.
+          <span id="searchbar">
+            <input id="inputSearchBar" type="text" class="fa" placeholder="search for food or drinks"
+              onclick="noPlaceholder();" /><i class="fas fa-search search-icon"></i>
+          </span>
+        </p>
+        <!-- </div> -->
+        <div id="slider">
+          <ul id="slideWrap">
+            <li><img src="./../images/foodImages/pizza.jpg"></li>
+            <li><img src="./../images/foodImages/butterChicken.jpg"></li>
+            <!-- <li><img src="./../images/foodImages/momo.jpg"></li> -->
+            <li><img src="./../images/foodImages/biriyani.jpg"></li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <div id="categories-bar">
+      <!-- show function is for showing the categories section on click -->
+      <li id="appetizers" class="categories-button" onclick="show('appetizers');">
+        Appetizers
+      </li>
+      <li id="mainCourse" class="categories-button" onclick="show('mainCourse');">
+        Main course
+      </li>
+      <li id="dessert"  class="categories-button" onclick="show('dessert');">
+        Dessert
+      </li >
+      <li id="drinks" class="categories-button" onclick="show('drinks');">
+        Drinks
+      </li>
+    </div>
+    <div id="appetizers-section" class="catedories-section">
+      <button class="box">box 1</button>
+      <button class="box">box 2</button>
+      <button class="box">box 3</button>
+      <button class="box">box 4</button>
+      
+      <button class="box">box 1</button>
+      <button class="box">box 2</button>
+      <button class="box">box 3</button>
+      <button class="box">box 4</button>
+      
+      <button class="box">box 1</button>
+      <button class="box">box 2</button>
+      <button class="box">box 3</button>
+      <button class="box">box 4</button>
+      
+      <button class="box">box 1</button>
+      <button class="box">box 2</button>
+      <button class="box">box 3</button>
+      <button class="box">box 4</button>
+      
+
+    </div>
+    <div>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem adipisci velit facere laudantium quas quod unde,
+      consequatur ullam alias, doloremque error suscipit saepe sapiente excepturi ea minus. Officia, sunt quos.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi placeat voluptas asperiores voluptatum blanditiis
+      assumenda. Asperiores, est recusandae. Esse, autem. Illum ipsa rerum dolor quos, amet repudiandae tempore placeat,
+      nobis veniam quidem ut quis beatae error molestias aperiam incidunt quae quam minus. Cumque beatae perspiciatis
+      rerum est asperiores maxime, doloribus, animi tempora excepturi a officiis quidem aut consequatur repudiandae
+      itaque quaerat voluptate. Illum doloribus rem earum deserunt reprehenderit perspiciatis, commodi eveniet cumque.
+      Totam velit culpa mollitia in ducimus neque cum eaque, natus nesciunt repellendus ipsam nisi. Aliquid est magni
+      facilis asperiores voluptatum perferendis id. Itaque distinctio facilis cumque velit ipsum!lorem1000
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam, sit commodi perspiciatis iusto dolorum
+      sapiente tenetur ea labore magnam debitis minus alias, odio a corrupti voluptatibus eos ullam sint possimus
+      dolores esse eaque illo nobis neque. Impedit, nobis. Porro repudiandae accusantium veritatis illo adipisci eaque
+      harum autem, delectus, nobis, numquam doloribus. Necessitatibus nemo veritatis, odio tempore consequuntur fugiat
+      ipsa voluptatem obcaecati ratione harum cumque, totam quibusdam! Nobis necessitatibus maxime iste animi, excepturi
+      optio id harum modi temporibus praesentium at hic quis eius, pariatur dicta asperiores? Non minima voluptatibus
+      quo incidunt, atque a suscipit molestias neque, rem quod sunt excepturi magnam assumenda soluta vitae vero
+      accusantium eum alias aut tempora aspernatur esse consequuntur deserunt? Voluptatum, quis quo necessitatibus
+      deleniti impedit soluta. Harum ipsa, explicabo obcaecati vero, quibusdam dolor magni cumque libero veniam vitae
+      atque voluptates, quam architecto praesentium! Dolore asperiores porro veritatis, maiores aliquam at iure non modi
+      perspiciatis explicabo neque tempore, fugiat obcaecati et aspernatur accusamus mollitia eligendi consequuntur eius
+      provident deleniti autem nulla consectetur. Delectus iure itaque vero natus. Expedita modi reprehenderit eum
+      tempore? Libero quos maxime ut rem rerum alias tempore voluptates dicta possimus, illum distinctio animi velit
+      voluptatibus vitae. Consequatur unde totam corporis quia libero reiciendis soluta maxime voluptas? Quidem
+      doloremque provident amet adipisci eveniet hic culpa laboriosam sit ducimus suscipit accusantium temporibus totam
+      quisquam quae perferendis, quas eos nesciunt! Aliquid ducimus animi et veritatis, accusamus molestias voluptas
+      nesciunt neque sit quia, doloremque aut omnis, quasi harum officiis hic recusandae at impedit sapiente eius in.
+      Dolores nostrum laudantium voluptas sint animi distinctio quidem maxime asperiores architecto delectus, quas
+      tenetur ipsa, eum provident, neque quisquam. Itaque, eligendi reprehenderit. A explicabo ea totam autem,
+      temporibus quasi cumque, sint, optio error minima dolorem labore quibusdam ullam esse harum dolor libero velit aut
+      dolorum repellat omnis ducimus deleniti. Voluptatum fuga quidem velit harum, vitae id alias corrupti numquam quo
+      quibusdam repellat facilis ratione neque repellendus consectetur possimus repudiandae nulla. Unde expedita
+      reiciendis adipisci blanditiis vero sequi alias, laudantium iusto itaque architecto facere aut in nisi earum
+      perferendis dolorem quam harum fugiat obcaecati ipsa error nesciunt illum. At eos harum exercitationem omnis
+      obcaecati nisi molestiae similique. Provident et sunt atque totam vero perspiciatis modi? Animi repellat cum
+      repellendus excepturi! Vero necessitatibus consequuntur modi adipisci voluptatem, exercitationem illum? Distinctio
+      quam architecto repudiandae laboriosam consectetur. Adipisci aliquid, tempore sunt unde voluptate cumque quod
+      praesentium ea ratione cupiditate aut a rerum repellendus nostrum facere minus earum. Est, nam deserunt optio
+      nostrum sed dicta molestiae libero quidem facere. Quisquam in amet quasi atque voluptates ipsum. Rem adipisci
+      accusantium eveniet nostrum hic ut aliquam ratione sequi pariatur? Sed temporibus reprehenderit, neque eligendi
+      pariatur suscipit necessitatibus ad, quis aperiam amet quae totam sapiente. Numquam officiis consequatur repellat
+      aliquam! Excepturi reiciendis reprehenderit porro autem velit veritatis accusantium beatae nostrum. Quasi culpa
+      eius architecto deleniti unde reiciendis qui veritatis aut atque doloremque, molestias similique quae nostrum
+      adipisci sit hic. Totam corrupti culpa omnis quod tempora, modi tenetur error earum temporibus dolore magni
+      eligendi ad quo mollitia eaque alias illo neque sequi! Distinctio aliquid doloremque nihil harum, consequuntur
+      doloribus ducimus rem illum assumenda esse magnam accusantium ullam non, cumque blanditiis tenetur quos. Mollitia
+      cumque rerum ipsum magnam? Dignissimos iusto, labore omnis hic culpa quisquam rerum in! Id, esse eum quae quia ea
+      praesentium maiores error iusto neque itaque fugiat molestiae possimus magnam repellat aspernatur, corrupti unde
+      assumenda, ab magni nemo culpa voluptates sint? Expedita ab praesentium, alias fugit itaque sit iusto quod
+      aspernatur harum ipsam voluptate enim tempore soluta quas fuga dicta. Deserunt velit voluptatum fugiat dicta iusto
+      voluptatibus fuga, similique nam tenetur aliquid pariatur facere sit cumque placeat quas corrupti dolore commodi
+      vero quaerat qui! Earum reiciendis ipsa vitae perferendis, iusto quos nemo velit facilis distinctio, officiis
+      omnis, fugit delectus? Eaque qui ipsa beatae ratione provident asperiores quasi ad nemo inventore voluptas nam
+      nihil itaque quaerat soluta velit aperiam, eveniet molestiae unde dolorum cum assumenda repudiandae, aut
+      aspernatur rem! Reiciendis repudiandae eius iusto magnam neque voluptatum rerum odio maiores eos, consequatur
+      tempora odit nulla inventore nisi, iure quos ducimus aut, reprehenderit voluptas consequuntur sapiente iste
+      eligendi commodi esse! Autem facere praesentium reiciendis dicta, repudiandae nesciunt laudantium voluptate
+      molestias magnam sit illum necessitatibus minus ad veritatis numquam assumenda aspernatur nostrum pariatur aliquam
+      deleniti ex? Distinctio sed velit illo tenetur fugit enim debitis saepe cupiditate veniam sunt exercitationem quod
+      consequatur asperiores expedita voluptates rerum, facere iste sequi nesciunt ducimus incidunt nihil. Aperiam
+      officiis nostrum molestias ipsa non optio iure. Voluptas, eveniet amet laudantium obcaecati nam delectus nulla ex
+      corporis quos mollitia recusandae. Non mollitia at voluptatum rerum reprehenderit quisquam rem quaerat, porro,
+      saepe repudiandae voluptates commodi aperiam fuga ipsa nemo voluptatem quia corrupti cumque nulla minus minima
+      explicabo repellat consequuntur voluptas. Quia corporis et rem maxime officia excepturi odio necessitatibus nobis.
+      Doloribus eos aliquam, libero quam necessitatibus ipsum quia, possimus animi, rerum quo tenetur odio recusandae!
+      Similique quibusdam, qui quo asperiores dignissimos voluptatum perferendis dolorum facere sapiente dolorem
+      perspiciatis explicabo rerum, commodi possimus nam natus facilis ipsa esse. Libero autem maiores ab, dolorum
+      incidunt debitis, quam fugiat inventore, in maxime amet dolores rem sint itaque sed deserunt suscipit commodi
+      voluptatem tempore placeat asperiores dicta numquam. Facere repudiandae quos excepturi, consequuntur, perspiciatis
+      distinctio inventore consequatur nobis laboriosam possimus at! Cum dolores tempore quae suscipit officiis libero
+      minus laudantium. Iusto eaque ipsam magnam fuga officiis dolor minima cumque expedita quasi rem cupiditate quos
+      modi inventore et illo recusandae itaque, esse ea, saepe sunt facilis omnis cum sed debitis. Dolore sequi eum
+      laboriosam unde dolor, laudantium quasi porro veniam temporibus facilis delectus quam sint enim est cum pariatur
+      assumenda iste quas repellendus asperiores laborum. Reiciendis nesciunt perspiciatis dolorem mollitia, molestiae
+      repellat minima et voluptate repellendus molestias provident voluptates possimus fugiat impedit ex ad atque sint
+      iste alias error cumque doloremque facilis debitis! Vero, similique! Quos doloribus quam, mollitia consequuntur
+      molestiae a beatae. Sed aliquam deserunt, expedita, officiis laborum a iure assumenda quo saepe magni neque
+      temporibus suscipit, recusandae fugiat incidunt molestias dolorum minus impedit adipisci voluptatem! At, dicta?
+      Vel accusantium laborum aliquam minus odio!
+    </div>
+
+    <footer style="background-color: #00203fff; color:#adefd1ff; text-align: center;">
+
+      <h1 style="text-align: center;">
+        about us <br>
+      </h1>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi temporibus aspernatur eos aliquid velit quas,
+      perferendis vel excepturi doloremque delectus, nobis quae provident ipsa laudantium atque voluptates quia possimus
+      placeat iusto. Est.
+      <hr width="70%" style="margin: 10px auto;">
+      <div class="grid-item footerContactUsAndConnect">
+        <div id="connectWithUs">
+          <h1 style="text-align: center;">
+            Find us
+          </h1>
+          <i class="fab fa-facebook-square formarginTB"></i>Facebook<br>
+          <i class="fab fa-tiktok formarginTB"></i>Tiktok<br>
+          <i class="fab fa-instagram-square formarginTB"></i>Instagram<br>
+        </div>
+        <div>
+          <h1>
+            Contact us
+          </h1>
+          <i class="fab fa-whatsapp formarginTB"></i>Whatsapp<br>
+          <i class="fab fa-viber formarginTB"></i>Viber<br>
+          <i class="fas fa-envelope-open-text formarginTB"></i>Gmail<br>
+        </div>
+        
+      </div>
+      <hr width="70%" style="margin: 10px auto;">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum minima nostrum est quod. Nulla assumenda eum
+      exercitationem doloribus excepturi ea impedit, velit ut repellat, alias id unde commodi optio dolore nobis magni
+      porro? Aliquam vel, iusto iste earum ipsa sed nobis magni quasi quidem praesentium et eveniet totam commodi fugit
+      dolorum nemo consequuntur maxime mollitia tempore pariatur doloremque voluptatibus repellat? Aut cum esse suscipit
+      ipsum, consectetur animi eum dolorum nesciunt inventore consequuntur illo repellendus saepe officia qui iure, fuga
+      dolore deleniti sunt assumenda ipsa ducimus! Magnam, nulla. Tenetur, eveniet ad eius harum corporis placeat unde
+      ab quis et consequuntur numquam.
+    </footer>
+  </div>
+
+  <!-- this is for registration form -->
+  <form action="POST" id="for-form">
+    <img src="./../images/loginImageIcon.jpg" class="avatar" alt="">
+    <table id="registration-components">
+      <tr>
+        <td>
+          <i class="fas fa-times-circle icon-close" onclick="closeNewPanel()"></i>
+          Full Name:
+          <input type="text" class="coverClass">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Address:
+          <input type="text" class="coverClass">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Phone Number:
+          <input type="text" class="coverClass">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Email:
+          <input type="text" class="coverClass">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Username:
+          <input type="text" class="coverClass">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Password:
+          <input type="text" class="coverClass">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Re-enter Password:
+          <input type="text" class="coverClass" height="100vh">
+          <br>
+          <div>
+            <input type="button" id="submit" value="submit" onclick="functionname();" class="submit-button" />
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+
 </body>
+
 </html>
