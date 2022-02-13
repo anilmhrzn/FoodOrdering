@@ -1,84 +1,56 @@
  <!-- this is for registration form -->
- <form action="http://localhost/FoodOrdering/landingpage/post_for_registration.php" id="for-form"  method="POST">
-     <img src="./../images/loginImageIcon.jpg" class="avatar" alt="">
-     <div id="registration-components">
-         <p  class="component">
-             <i class="fas fa-times-circle icon-close" onclick="closeNewPanel()"></i>
-             Full Name:
-             <input type="text" class="coverClass" id="fullName" name="fullName">
-         </p>
-         <p class="component">
-             Address:
-             <input type="text" class="coverClass" id="address" name="address">
-         </p>
-         <p class="component">
-             Phone Number:
-             <input type="number" class="coverClass" id="number" name="number">
-         </p>
-         <p class="component">
-             Email:
-             <input type="text" class="coverClass" id="email" name="email">
-         </p>
-         <p class="component">
-             Username:
-             <input type="text" class="coverClass" id="username" name="username">
-         </p>
-         <p class="component">
-             Password:
-             <input type="text" class="coverClass" id="password" name="password">
-         </p>
-         <p class="component">
-             Re-enter Password:
-             <input type="text" class="coverClass" id="reEnteredPassword" name="reEnteredPassword">
-             <br>
-         </p>
-     </div>
-     <!-- <table id="registration-components">
-         <tr>
-
-             <td>
-                 </td>
-             <td>
+ <form action="http://localhost/FoodOrdering/landingpage/post_for_registration.php" id="for-form" method="POST">
+         <img src="./../images/loginImageIcon.jpg" class="avatar" alt="">
+         <div id="registration-components">
+             <p class="component">
+                 <i class="fas fa-times-circle icon-close" onclick="closeNewPanel()"></i>
+                 Full Name:
+                 <span style="color:red;"><b class="icon-foo" style="font-family: FontAwesome;" >&#xf06a;  </b> error message</span> <br>
+                 
+                 <input type="text" class="coverClass" id="fullName" name="fullName" >
+             </p>
+             <p class="component">
                  Address:
+                 <span style="color:red;"><b class="icon-foo" style="font-family: FontAwesome;" >&#xf06a;  </b> error message</span> <br>
+                 
                  <input type="text" class="coverClass" id="address" name="address">
-             </td>
-         </tr>
-         <tr>
-           <td >
-               Phone Number:
+             </p>
+             <p class="component">
+                 Phone Number:
+                 <span style="color:red;"><b class="icon-foo" style="font-family: FontAwesome;" >&#xf06a;  </b> error message</span> <br>
+                 
                  <input type="number" class="coverClass" id="number" name="number">
-             </td>
-         </tr>
-         <tr>
-             <td >
+             </p>
+             <p class="component">
                  Email:
+                 <span style="color:red;"><b class="icon-foo" style="font-family: FontAwesome;" >&#xf06a;  </b> error message</span> <br>
+                 
                  <input type="text" class="coverClass" id="email" name="email">
-             </td>
-         </tr>
-         <tr>
-             <td >
+             </p>
+             <p class="component">
                  Username:
-                 <input type="text" class="coverClass" id="username" name="username">
-             </td>
-             <td>
+                 <span style="color:red;"><b class="icon-foo" style="font-family: FontAwesome;" >&#xf06a;  </b> error message</span> <br>
+                 
 
-             </td>
-         </tr>
-         <tr>
-             <td>
+                 <input type="text" class="coverClass" id="username" name="username">
+             </p>
+             <p class="component">
                  Password:
-                 <input type="text" class="coverClass" id="password" name="password">
-             </td>
-             <td>
-                 Re-enter Password:
-                 <input type="text" class="coverClass" id="reEnteredPassword" name="reEnteredPassword">
+                 <span style="color:red;"><b class="icon-foo" style="font-family: FontAwesome;" >&#xf06a;  </b> error message</span> <br>
+                 
+                 <input type="password" class="coverClass" id="password" name="password">
+             </p>
+             <p class="component">
+                 Re-enter Password: <span style="color:red;"><b class="icon-foo" style="font-family: FontAwesome;" >&#xf06a;  </b> error message</span> <br>
+                 
+                 <input type="password" class="coverClass" id="reEnteredPassword" name="reEnteredPassword">
                  <br>
-             </td>
-         </tr>
-         <tr>
-           <td>
-               <input type="submit" id="submit" value="submit" onclick="frontentValidation();" class="button" />
-            </td>
-         </tr>
-     </table> -->
- </form>
+             </p>
+             <p class="for-center-vertically-horizontally">
+                 <input type="submit" value="submit" class="button">
+             </p>
+             <p class="for-center-vertically-horizontally ">
+                <u class="hovering-effect"> already have an account</u>
+             </p>
+         </div>
+     </form>

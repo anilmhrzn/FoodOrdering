@@ -1,6 +1,6 @@
 <footer style="background-color: #00203fff; color:#adefd1ff; text-align: center;">
 
-    <h1 style="text-align: center;">
+    <h1 id="aboutUs" style="text-align: center;">
         about us <br>
     </h1>
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi temporibus aspernatur eos aliquid velit quas,

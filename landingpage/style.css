@@ -2,22 +2,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* font-family: cursive; */
+  /* font-family: 'Quintessential', cursive;'Dancing Script', cursive; */
+  /* font-weight: bolder; */
 }
-/*.body-content and .body-content::-webkit-scrollbar is for none scrollable content */
-/* .body-content {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-.body-content::-webkit-scrollbar {
-  display: none;
-} */
-.hideScrollBar{
+.hideScrollBar {
   overflow-x: hidden;
   overflow-y: scroll;
 }
 .hideScrollBar::-webkit-scrollbar {
   display: none;
-} 
+}
 #navbar {
   position: sticky;
   top: 0px;
@@ -34,7 +29,7 @@
   text-align: center;
   color: #00203fff;
   font-size: 3vw;
-  height: 6vh;
+  height: 8vh;
   padding: 0.3vw;
   display: flex;
   align-items: center;
@@ -42,8 +37,16 @@
   margin-left: 5vw;
   border-radius: 5px;
   transition: transform 0.2s;
+  /* border-bottom: none; */
+  text-decoration: none;
+  /* font-family: "Festive", "cursive"; */
+  /* font-family: 'Dancing Script', cursive; */
+  font-family: 'Cookie', cursive;
+
+  font-weight: 600;
+  /* letter-spacing: 6px; */
 }
-.company-name:hover {
+#companyname:hover {
   transform: scale(1.1);
 }
 #nav-right-side {
@@ -83,6 +86,7 @@
 }
 .button:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 .grid-item {
   display: grid;
@@ -110,6 +114,7 @@
   outline: none;
   font-size: 1.2rem;
   text-align: center;
+  letter-spacing: 1px;
 }
 /* for placeholder styling */
 #searchbar input::-webkit-input-placeholder {
@@ -132,18 +137,16 @@
   transform: scale(1.2);
 }
 #slider {
-  position: relative;
-  top: 0px;
   overflow: hidden;
-  /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); */
-  /* margin: 30px; */
   width: 50vw;
+  /* position: relative;
+  top: 0px;
   height: 60vh;
   padding: 0;
   margin: 0;
-  border: 1px;
+  border: 1px; */
 }
-#slider ul {
+/* #slider ul {
   position: relative;
   list-style: none;
   height: 60vh;
@@ -151,12 +154,10 @@
   padding: 0;
   margin: 0;
   transition: all 750ms ease;
-  /* left: 0; */
   right: 0;
-}
+} */
 #slider ul li img {
   width: 50vw;
-  /* height: 700px; */
 }
 #slider ul li {
   position: relative;
@@ -185,7 +186,7 @@
 }
 .categories-button:hover {
   transform: scale(1.2);
-  color:green;
+  color: green;
   cursor: pointer;
   z-index: 1;
 }
@@ -195,21 +196,27 @@
 /* if clicked in given option of categories show a cliked category*/
 .show-categories-section {
   display: grid;
-  grid-template-columns: 25vw 25vw 25vw 25vw;
-  grid-gap: 10px;
+  grid-template-columns: 45vw 45vw;
+  grid-gap: 20px;
   padding: 4vh 50px;
-  background-color: #85dcb8;
 }
 .box {
-  background-color: white;
+  background-color: rgb(161, 207, 187);
 }
-.box:hover{
-  background-color: #00203fff;
-  color: white;
+.box:hover {
+  background-color: #adefd1ff;
+  color: black;
+}
+#for-grid-50-50 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border: 1px solid black;
+  box-shadow: 5px 10px;
 }
 .imgFoodSection {
   overflow: hidden;
   border-radius: 5px 50px 5px;
+  margin: 5px;
 }
 .imageOfFoods {
   width: 100%;
@@ -226,6 +233,81 @@
   background-color: rgb(113, 255, 191);
   cursor: pointer;
 }
+/* this css is for the part which is shown after clicking ordernow button */
+.margin-3vh{
+  /* margin: 3vw 0 0 3vw; */
+  margin: auto;
+
+}
+.for-dancingScript-font{
+/* font-family: 'festive'; */
+font-family: 'Dancing Script', cursive;
+font-family: 'Redressed', cursive;
+
+font-size: 1.2rem;
+}
+.margin-1vh {
+  margin: 1vh;
+}
+
+.for-padding {
+  padding: 4px 5px;
+  width: 140px;
+}
+
+.qty-price-box {
+  display: none;
+}
+.for-hide-show {
+  position: sticky;
+  bottom: 10px;
+  left: 10px;
+  background-color: #c5c5c5;
+  box-shadow: 5px 5px;
+  width: 20%;
+  border-radius: 10px;
+}
+.inputTagOfOrder {
+  width: 100%;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  text-align: center;
+  /* font-family: 'festive';
+  font-size: large; */
+}
+/* for price */
+.totalAmt {
+  width: 90px;
+}
+#order-button {
+  width: 50%;
+  /* display: flex; */
+  /* justify-content: center; */
+  text-align: center;
+  margin: auto;
+  /* margin-bottom: 5px;
+  margin-top: 5px ; */
+  background-color: rgb(161, 207, 187);
+  transition: transforom 0.2s ease-in-out;
+  border: 2px outset black;
+}
+#order-button:hover {
+  background-color: #adefd1ff;
+  transform: scale(1.2);
+}
+.center {
+  margin: 5px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* #orderQuantity{
+width: 10vw;
+} */
 /* for footer */
 .formarginTB {
   margin: 20px 0 0 0;
@@ -241,44 +323,73 @@
   border-right: 2px solid #adefd1ff;
 }
 /* last for register */
-.content-except-register-form{
+/* :root {
+  --code-color: darkred;
+  --code-bg-color: #f6f6f6;
+  --code-font-size: 14px;
+  --code-line-height: 1.4;
+  --scroll-bar-color: #c5c5c5;
+  --scroll-bar-bg-color: #f6f6f6;
+} */
+
+.content-except-register-form {
   overflow-x: hidden;
 }
+
 #registration-components {
   position: fixed;
-  /* position: none; */
   top: 16vh;
-  height: 50vh;
+  left: 50%;
+  transform: translate(-50%);
+  margin: auto;
+  /* position: none; */
+  height: 60vh;
   width: 30vw;
   border-radius: 5px;
   background-color: white;
   padding: 4vw 2vw 0 2vw;
   background-color: white;
   border: 1px solid black;
-  overflow-y:scroll ;
+  overflow-y: scroll;
   z-index: 1;
+  /* background-color:red; */
 }
+
+/* for thinner scrollbar */
+#registration-components::-webkit-scrollbar {
+  width: 12px;
+}
+
+#registration-components::-webkit-scrollbar-track {
+  background: var(--scroll-bar-bg-color);
+}
+
+#registration-components::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar-color);
+  border-radius: 20px;
+  border: 2px solid var(--scroll-bar-bg-color);
+}
+
 #for-form {
   display: none;
-  /* display: flex;
-  justify-content: center;
-  visibility: hidden; */
 }
+
 .icon-close {
   position: absolute;
   right: 1vh;
   top: 1vh;
   transition: transform 0.2s;
 }
+
 .icon-close:hover {
   cursor: pointer;
   transform: scale(1.5);
 }
 
 /* .transitionClass {
-  /* opacity: 1; */
-  /* visibility: visible; */
-/* } */ 
+/* opacity: 1; */
+/* visibility: visible; */
+/* } */
 
 .avatar {
   position: fixed;
@@ -289,24 +400,39 @@
   overflow: hidden;
   z-index: 100;
 }
+
 .coverClass {
   width: 100%;
   height: 4vh;
   border: none;
   border: 1px solid black;
   outline: none;
+  padding: 0 5px;
+  letter-spacing: 1px;
 }
-.component{
+
+.component {
   margin-top: 4vh;
   /* height: 8vh; */
   /* padding: 4vh 0; */
 }
-#submit {
-  position: relative;
-  top: 3vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-bottom: 2vh;
-  background-color: #adefd1ff;
+.for-center-vertically-horizontally {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.hovering-effect {
+  transition: transform 0.2s ease-in-out;
+}
+.hovering-effect:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+/* for removing arrow key in input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
