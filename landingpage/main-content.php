@@ -1,11 +1,9 @@
 <?php include 'header.php';?>
 
-<body id="hello" class="hideScrollBar">
+<body  class="hideScrollBar">
     <form action="http://localhost/FoodOrdering/landingpage/validateUser.php" method="GET">
-    <!-- id="main-body" and class="body-content" is used in js for blocking scroll feature while registraion form is opened  -->
-
-    <div id="content-except-register-form" class="for-content-except-register-form">
         <!--this is used in js for background blur while registration form is opened by user  making whole webpage blur except registration form box-->
+    <div id="content-except-register-form" class="for-content-except-register-form">
         <nav id="navbar">
             <!--this is for navigation bar-->
             <a href="#aboutUs" id="companyname" class="company-name"> Food Paradise </a>
@@ -15,7 +13,6 @@
                     <i class=" far fa-user icon"></i> <!-- this is for icon -->
                     <input type="text" name="username-for-login" id="username-for-login" class="inputTag"
                     placeholder="Username" style="margin-right: 10px;" />
-                    <!-- <p>hello</p> -->
                     </li>
                     <li class="inputBlock">
                         <i class="fas fa-key icon"></i>
@@ -34,8 +31,6 @@
         <div id="middle-body">
 
             <div id="main-content" class="grid-item">
-                <!-- <div> -->
-
                 <p style="margin: 2vw;">
                     hungry? <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Hic, nostrum nesciunt rem, numquam veritatis fuga at obcaecati sed
@@ -47,7 +42,7 @@
 
                     <span id="searchbar">
                         <input id="inputSearchBar" type="text" class="fa" placeholder="search for food or drinks"
-                            onclick="noPlaceholder();" /><i
+                        /><i 
                             class="fas fa-search search-icon"></i>
                     </span>
                 </p>

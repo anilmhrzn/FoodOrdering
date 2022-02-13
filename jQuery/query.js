@@ -1,13 +1,13 @@
 // for search bar
-function noPlaceholder() {
-  element = document.getElementById("inputSearchBar");
-  element.placeholder = "";
-  element.addEventListener("focusout", () => {
-    if (element.value.trim() == "") {
-      element.placeholder = "search for food or drinks";
-    }
-  });
-}
+// /*function noPlaceholder() {
+//   element = document.getElementById("inputSearchBar");
+//   element.placeholder = "";
+//   element.addEventListener("focusout", () => {
+//     if (element.value.trim() == "") {
+//       element.placeholder = "search for food or drinks";
+//     }
+//   });
+// }*/
 // for opening registraion form
 function newPanel() {
   element = document.getElementById("for-form");
@@ -31,7 +31,7 @@ function frontentValidation() {
     alert("fullname cannot be empty");
   }
 }
-// for opening registraion form
+// for closing registraion form
 function closeNewPanel() {
   element = document.getElementById("for-form");
   element.style.display = "none";
@@ -40,33 +40,20 @@ function closeNewPanel() {
 }
 
 //for categories section
-var flagForBgColor = false;
 function show(id, idofcategories) {
-  if (flagForBgColor == true) {
-    document.getElementById("appetizers").style.backgroundColor = "transparent";
-    document.getElementById("mainCourse").style.backgroundColor = "transparent";
-    document.getElementById("dessert").style.backgroundColor = "transparent";
-    document.getElementById("drinks").style.backgroundColor = "transparent";
-    document
-      .getElementById("appetizers-section")
-      .classList.remove("show-categories-section");
-    document
-      .getElementById("mainCourse-section")
-      .classList.remove("show-categories-section");
-    document
-      .getElementById("dessert-section")
-      .classList.remove("show-categories-section");
-    document
-      .getElementById("drinks-section")
-      .classList.remove("show-categories-section");
-
-    // console.log('hello')
-  }
+  document.getElementById("appetizers").style.backgroundColor = "transparent";
+  document.getElementById("mainCourse").style.backgroundColor = "transparent";
+  document.getElementById("dessert").style.backgroundColor = "transparent";
+  document.getElementById("drinks").style.backgroundColor = "transparent";
+  document.getElementById("appetizers-section").classList.remove("show-categories-section");
+  document.getElementById("mainCourse-section").classList.remove("show-categories-section");
+  document.getElementById("dessert-section").classList.remove("show-categories-section");
+  document.getElementById("drinks-section").classList.remove("show-categories-section");
   element = document.getElementById(id);
   element.style.backgroundColor = "#41b3a3";
   showCategories(idofcategories);
-  flagForBgColor = true;
 }
+// for showing the clicked categories section
 function showCategories(id) {
   element = document.getElementById(id);
   element.classList.add("show-categories-section");
@@ -86,9 +73,9 @@ function showQtyBox(price, name) {
 // for quantity
 function calculateAmount(qty) {
   if (qty > 9999) {
-    document.getElementById('totalAmt').innerText = "not available!!";
+    document.getElementById("totalAmt").innerText = "not available!!";
   } else {
-    document.getElementById('totalAmt').innerText = "R.s." + qty * price + "";
+    document.getElementById("totalAmt").innerText = "R.s." + qty * price + "";
   }
 }
 
