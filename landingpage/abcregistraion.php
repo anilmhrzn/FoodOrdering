@@ -3,7 +3,7 @@
          <img src="./../images/loginImageIcon.jpg" class="avatar" alt="">
          <div id="registration-components">
              <p class="component">
-                 <i class="fas fa-times-circle icon-close" onclick="closeNewPanel()"></i>
+                 <i class="fas fa-times-circle icon-close" onclick="closeNewPanel();"></i>
                  Full Name:
                  <span style="color:red;"><b class="icon-foo" style="font-family: FontAwesome;" >&#xf06a;  </b> error message</span> <br>
                  
@@ -50,7 +50,7 @@
                  <input type="submit" value="submit" class="button">
              </p>
              <p class="for-center-vertically-horizontally ">
-                <u class="hovering-effect"> already have an account</u>
+                <a href="#username-for-login" class="hovering-effect" onclick="closeNewPanel();"> already have an account</a>
              </p>
          </div>
      </form>

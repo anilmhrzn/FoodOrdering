@@ -22,7 +22,7 @@
         <tr>
             <td colspan="2">
                 <div class="center">
-                    <input type="button" value="order" onclick="abc('<?php echo $row['name']?>');" id="order-button"
+                    <input type="submit" name="order" value="order"  id="order-button"
                         colspan="2"><i class="fas fa-times-circle icon-close" onclick="closeQtyPricePanel()"></i>
                     <script>
                     function closeQtyPricePanel() {

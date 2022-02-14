@@ -69,7 +69,6 @@ function showQtyBox(price, name) {
   element.style.display = "block";
   calculateAmount(qty);
 }
-// calculateAmount();
 // for quantity
 function calculateAmount(qty) {
   if (qty > 9999) {

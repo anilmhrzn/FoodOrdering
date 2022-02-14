@@ -1,37 +1,21 @@
+<?php
+session_start();
+include 'db_config.php';
+if(!isset($_SESSION['USER_ID'])){
+    header("location:login.php");
+    die();
+}
+?>
 <?php include 'header.php';?>
 
-<body  class="hideScrollBar">
-    <form action="http://localhost/FoodOrdering/landingpage/validateUser.php" method="GET">
-        <!--this is used in js for background blur while registration form is opened by user  making whole webpage blur except registration form box-->
+<body class="hideScrollBar">
+    <!--this is used in js for background blur while registration form is opened by user  making whole webpage blur except registration form box-->
     <div id="content-except-register-form" class="for-content-except-register-form">
-        <nav id="navbar">
-            <!--this is for navigation bar-->
-            <a href="#aboutUs" id="companyname" class="company-name"> Food Paradise </a>
-            <ul id="nav-right-side">
-                <!--this is for right side part of navigation bar such as username , password , login and register-->
-                <li class="inputBlock">
-                    <i class=" far fa-user icon"></i> <!-- this is for icon -->
-                    <input type="text" name="username-for-login" id="username-for-login" class="inputTag"
-                    placeholder="Username" style="margin-right: 10px;" />
-                    </li>
-                    <li class="inputBlock">
-                        <i class="fas fa-key icon"></i>
-                        <input type="password" name="password-for-login" id="password-for-login" class="inputTag"
-                        placeholder="Password" />
-                    </li>
-                </form>
-                <li class="inputBlock">
-                    <input type="submit" value="login" id="login" class="button" onclick="console.log('hello')">
-                </li>
-                <li class="inputBlock">
-                    <input type="button" value="register" onclick="newPanel();" id="register" class="button" />
-                </li>
-            </ul>
-        </nav>
+        <?php include 'navbar.php'?>
         <div id="middle-body">
-
             <div id="main-content" class="grid-item">
-                <p style="margin: 2vw;">
+                <form id="for-search-form" action="http://localhost/FoodOrdering/landingpage/search-for-foods.php"
+                    method="GET" style="margin: 2vw;">
                     hungry? <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Hic, nostrum nesciunt rem, numquam veritatis fuga at obcaecati sed
                     sunt ut saepe vero nemo enim. Nostrum tempora fugiat aspernatur fuga
@@ -39,13 +23,12 @@
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id quia, a ad dolorem at atque. Est vel
                     blanditiis adipisci corrupti dignissimos, ipsam sequi dolorum vitae voluptate sunt vero porro eum
                     dolore beatae.
-
                     <span id="searchbar">
-                        <input id="inputSearchBar" type="text" class="fa" placeholder="search for food or drinks"
-                        /><i 
-                            class="fas fa-search search-icon"></i>
+                        <input id="inputSearchBar" type="text" name="searched"
+                            placeholder="search for food or drinks" /><i class="fas fa-search search-icon"
+                            onclick="document.getElementById('for-search-form').submit()"></i>
                     </span>
-                </p>
+                </form>
                 <!-- </div> -->
                 <div id="slider">
                     <ul id="slideWrap">
@@ -89,6 +72,7 @@
     include 'registration.php';
     include 'QtyPriceTable.php';
     ?>
+    
 </body>
 
 </html>
