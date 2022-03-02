@@ -11,67 +11,66 @@ if (!isset($_SESSION['USER_ID'])) {
 
 <body class="hideScrollBar">
     <!--this is used in js for background blur while registration form is opened by user  making whole webpage blur except registration form box-->
-    <div id="content-except-register-form" class="for-content-except-register-form">
-        <?php include 'navbar.php' ?>
-        <div id="middle-body">
-            <div id="main-content" >
-                <!-- http://localhost/FoodOrdering/landingpage/search-for-foods.php -->
-                <form id="for-search-form" action="" method="GET" style="margin: 2vw;">
-                    <!-- <div style="width: 100vw;"> -->
-                        <div class="center" >
-                        <img src="./../images/foodImages/hungerheist.jpg" style="margin:auto; height:50vh;" alt="">
-                    </div>
-                    <!-- </div> -->
-
-                      
-                    <span id="searchbar">
-                        <input id="inputSearchBar" type="text" name="searched"
-                            placeholder="search for food or drinks" /><i class="fas fa-search search-icon"
-                            onclick="document.getElementById('for-search-form').submit();">
-                            <!-- document.querySelector('div.closeSearchedPanel').style.display='block'; -->
-                        </i>
-                    </span>
-                </form>
+    <?php include 'navbar.php' ?>
+    <div id="middle-body">
+        <div id="main-content">
+            <!-- http://localhost/FoodOrdering/landingpage/search-for-foods.php -->
+            <form id="for-search-form" action="" method="GET" style="margin: 2vw;">
+                <!-- <div style="width: 100vw;"> -->
+                <div class="center">
+                    <img src="./../images/foodImages/hungerheist.jpg" style="margin:auto; height:50vh;" alt="">
+                </div>
                 <!-- </div> -->
-                <!-- <div id="slider">
+
+
+                <span id="searchbar">
+                    <input id="inputSearchBar" type="text" name="searched" placeholder="search for food or drinks" /><i
+                        class="fas fa-search search-icon"
+                        onclick="document.getElementById('for-search-form').submit();">
+                        <!-- document.querySelector('div.closeSearchedPanel').style.display='block'; -->
+                    </i>
+                </span>
+            </form>
+            <!-- </div> -->
+            <!-- <div id="slider">
                     <ul id="slideWrap">
                         <li><img src="./../images/foodImages/pizza.jpg"></li>
                     </ul>
                 </div> -->
-            </div>
         </div>
-        <div id="categories-bar">
-            <!-- show function is for showing the categories section on click -->
-            <li id="appetizers" class="categories-button" onclick="show('appetizers','appetizers-section');">
-                <!-- if we click in this  the show function will be called where we send the appetizers to use this as id in js to select this for giving background color on click    -->
-                Appetizers
-            </li>
-            <li id="mainCourse" class="categories-button" onclick="show('mainCourse','mainCourse-section');">
-                Main course
-            </li>
-            <li id="dessert" class="categories-button" onclick="show('dessert','dessert-section');">
-                Dessert
-            </li>
-            <li id="drinks" class="categories-button" onclick="show('drinks','drinks-section');">
-                Drinks
-            </li>
-        </div>
-        <div id="appetizers-section" class="catedories-section">
-            <?php $category_id = 1;
+    </div>
+    <div id="categories-bar">
+        <!-- show function is for showing the categories section on click -->
+        <li id="appetizers" class="categories-button" onclick="show('appetizers','appetizers-section');">
+            <!-- if we click in this  the show function will be called where we send the appetizers to use this as id in js to select this for giving background color on click    -->
+            Appetizers
+        </li>
+        <li id="mainCourse" class="categories-button" onclick="show('mainCourse','mainCourse-section');">
+            Main course
+        </li>
+        <li id="dessert" class="categories-button" onclick="show('dessert','dessert-section');">
+            Dessert
+        </li>
+        <li id="drinks" class="categories-button" onclick="show('drinks','drinks-section');">
+            Drinks
+        </li>
+    </div>
+    <div id="appetizers-section" class="catedories-section">
+        <?php $category_id = 1;
             include 'fetch_from_db_forcategories.php' ?>
-        </div>
-        <div id="mainCourse-section" class="catedories-section">
-            <?php $category_id = 2;
+    </div>
+    <div id="mainCourse-section" class="catedories-section">
+        <?php $category_id = 2;
             include 'fetch_from_db_forcategories.php' ?>
-        </div>
-        <div id="dessert-section" class="catedories-section">
-            <?php $category_id = 3;
+    </div>
+    <div id="dessert-section" class="catedories-section">
+        <?php $category_id = 3;
             include 'fetch_from_db_forcategories.php' ?>
-        </div>
-        <div id="drinks-section" class="catedories-section">
-            <?php $category_id = 4;
+    </div>
+    <div id="drinks-section" class="catedories-section">
+        <?php $category_id = 4;
             include 'fetch_from_db_forcategories.php' ?>
-        </div>
+    </div>
     </div>
     <?php
     include 'QtyPriceTable.php';
@@ -121,9 +120,8 @@ if (!isset($_SESSION['USER_ID'])) {
             }
         } 
         ?>
-        <table class="for-adding-in-plate">
-        </table>
 
 
-    </div>
-    <?php include 'footer.php'; ?>
+
+        
+        <?php include 'footer.php'; ?>

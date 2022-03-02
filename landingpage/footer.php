@@ -6,47 +6,49 @@
 </div> -->
 
     <!-- about uss -->
-
-    <div class="for-about-us-section">
-
-        <div>
-        <h1 id="aboutUs" class="center">
+    <h1 id="aboutUs" class="center aboutUsStyle">
         About Us <br>
     </h1>
-            <span class="large-font-size">"</span>
-            Food paradise is all about serving high qulaity foods to customers through a website to your doorsteps.<span
-                class="large-font-size">"</span>
+    <div>
+
+        <div class="for-about-us-section">
+            <div>
+                <span class="large-font-size for-about-us-text">
+                    "Food paradise is all about <br> <br>
+                    serving high qulaity foods to customers <br> <br> through a website to your doorsteps."
+                </span>
+            </div>
         </div>
     </div>
+    <div class="for-footer" >
 
-    <hr width="70%" style="margin: 10px auto;">
-    <div class="grid-item footerContactUsAndConnect">
-        <div id="connectWithUs">
-            <h1 style="text-align: center;">
-                Find us
+        <div class="for-margin">
+
+            <h1 class="center-row-wise">
+                <hr>
+                Get Social With Us
+                <hr>
             </h1>
-            <i class="fab fa-facebook-square formarginTB"></i>Facebook<br>
-            <i class="fab fa-tiktok formarginTB"></i>Tiktok<br>
-            <i class="fab fa-instagram-square formarginTB"></i>Instagram<br>
+            <div class="center-row-wise">
+                <i class="fab fa-facebook-square forSocialIcons"></i>
+                <i class="fab fa-tiktok forSocialIcons"></i>
+                <i class="fab fa-instagram-square forSocialIcons"></i>
+            </div>
         </div>
-        <div>
-            <h1>
+        <div class="for-margin">
+
+            <h1 class="center-row-wise">
+                <hr>
                 Contact us
+                <hr>
             </h1>
-            <i class="fab fa-whatsapp formarginTB"></i>Whatsapp<br>
-            <i class="fab fa-viber formarginTB"></i>Viber<br>
-            <i class="fas fa-envelope-open-text formarginTB"></i>Gmail<br>
+            <div class="center-row-wise">
+                <i class="fab fa-whatsapp forSocialIcons "></i>
+                <i class="fab fa-viber forSocialIcons "></i>
+                <i class="fas fa-envelope-open-text forSocialIcons "></i>
+            </div>
         </div>
-
     </div>
-    <hr width="70%" style="margin: 10px auto;">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum minima nostrum est quod. Nulla assumenda eum
-    exercitationem doloribus excepturi ea impedit, velit ut repellat, alias id unde commodi optio dolore nobis magni
-    porro? Aliquam vel, iusto iste earum ipsa sed nobis magni quasi quidem praesentium et eveniet totam commodi fugit
-    dolorum nemo consequuntur maxime mollitia tempore pariatur doloremque voluptatibus repellat? Aut cum esse suscipit
-    ipsum, consectetur animi eum dolorum nesciunt inventore consequuntur illo repellendus saepe officia qui iure, fuga
-    dolore deleniti sunt assumenda ipsa ducimus! Magnam, nulla. Tenetur, eveniet ad eius harum corporis placeat unde
-    ab quis et consequuntur numquam.
 </footer>
 </body>
 
