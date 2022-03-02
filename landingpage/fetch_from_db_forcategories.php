@@ -8,8 +8,7 @@
 
 ?>
 <div>
-
-    <div id="for-grid-50-50">
+    <div class="for-grid-50-50">
         <div class='imgFoodSection'>
             <img src="<?php echo $row['image_address']?>" alt="sorry image is not availale......" class="imageOfFoods">
         </div>
@@ -19,11 +18,8 @@
             </span>
             <h4>R.s.<?php echo $row['price'] ?></h4>
             <input type="button" value="order now" class="box button"
-                onclick="showQtyBox(<?php echo $row['price']?>,'<?php echo $row['name']?>');calculateAmount(document.getElementById('inputTagOfOrder').value,<?php echo $row['price']?>)">
-
-            <!-- <div style=" margin:1vh;height:20vh;border:1px solid black;"> -->
-
-            <!-- </div> -->
+                onclick="showQtyBox(<?=$row['price']?>,'<?=$row['name']?>'); calculateAmount(document.getElementById('inputTagOfOrder').value);">
+        <!-- TODO: make a div which will hold data of items order also decide what to do after i clicked order  -->
         </div>
     </div>
 </div>

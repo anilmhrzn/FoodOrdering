@@ -4,6 +4,7 @@ function validation(){
     age=document.getElementById('age').value.trim();
     address=document.getElementById('address').value.trim();
     email=document.getElementById('email').value.trim();
+    username=document.getElementById('username').value.trim();
     password=document.getElementById('password').value;
     reEnteredPassword=document.getElementById('re-entered-password').value;
 
@@ -13,9 +14,11 @@ function validation(){
     errorAge=document.getElementById('age-validation');
     errorAddress=document.getElementById('address-validation');
     errorEmail=document.getElementById('email-validation');
+    errorUsername=document.getElementById('username-validation');
     errorPassword=document.getElementById('password-validation');
     errorReEnteredPassword=document.getElementById('re-entered-password-validation');
     isValidated=true;
+    console.log(fullName);
     if(fullName==''){
         errorFullName.innerHTML='&#xf071; Full Name empty'
         errorFullName.style.display="block";
@@ -68,18 +71,33 @@ function validation(){
     else{
         errorEmail.style.display="none";
     }
+    if(username==''){
+        errorUsername.innerHTML='&#xf071; username empty';
+        errorUsername.style.display="block";
+        document.getElementById('username').focus();
+        isValidated=false;
+
+    }
+    else{
+        errorEmail.style.display="none";
+    }
     if(password==''){
         errorPassword.innerHTML='&#xf071; password empty';
         errorPassword.style.display="block";
         document.getElementById('password').focus();
         isValidated=false;
 
-    }
-    else{
+    }else if(password.length<8){
+        errorPassword.innerHTML='&#xf071; password cannot be less than 8';
+        errorPassword.style.display="block";
+        document.getElementById('password').focus();
+        isValidated=false;
+
+    }else{
         errorPassword.style.display="none";
     }
     if(reEnteredPassword==''){
-        errorReEnteredPassword.innerHTML='&#xf071; Full Name empty';
+        errorReEnteredPassword.innerHTML='&#xf071; Re-entered password <br> is empty';
         errorReEnteredPassword.style.display="block";
         document.getElementById('re-entered-password').focus();
         isValidated=false;

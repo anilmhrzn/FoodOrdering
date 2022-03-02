@@ -42,7 +42,7 @@
   text-decoration: none;
   /* font-family: "Festive", "cursive"; */
   /* font-family: 'Dancing Script', cursive; */
-  font-family: 'Cookie', cursive;
+  font-family: "Cookie", cursive;
 
   font-weight: 600;
   /* letter-spacing: 6px; */
@@ -55,31 +55,40 @@
   right: 2vw;
   top: 1vw;
   display: flex;
-  justify-content:center;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   text-align: center;
+  height: 6vh;
   width: 8vw;
 }
+
 .icon {
   font-size: xx-large;
-  color: black;
+  color: #adefd1ff;
 }
-.icon:hover{
-  color:#adefd1ff;
+.icon:hover {
+  color: green;
 }
-.list-of-opt{
-color: aqua;
-/* z-index: 30; */
+.list-of-opt {
+  background-color: #adefd1ff;
+  color: #00203fff;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 5px;
+  transition: transform 0.5s ease-in-out;
 }
-.drop-down-list{
+.list-of-opt:hover {
+  transform: scale(1.2);
+  background-color: rgb(130, 243, 192);
+  color: #00203fff;
+}
+.drop-down-list {
   display: none;
   flex-direction: column;
-  /* z-index:444 ; */
   margin-top: 20px;
 }
-#logout-btn{
-margin-top: 1vh;
-}
+
 .button {
   box-sizing: content-box;
   height: 4vh;
@@ -95,7 +104,6 @@ margin-top: 1vh;
   display: grid;
   grid-column: 2;
   grid-template-columns: 50% 50%;
-  height: 60vh;
 }
 #searchbar {
   display: flex;
@@ -138,6 +146,19 @@ margin-top: 1vh;
 .search-icon:hover {
   cursor: pointer;
   transform: scale(1.2);
+}
+div.for-search-panel {
+  background-color: red;
+  width: auto;
+  height: 50%;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 100;
+  padding: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
+  /* display: none; */
 }
 #slider {
   overflow: hidden;
@@ -208,19 +229,22 @@ margin-top: 1vh;
   background-color: #adefd1ff;
   color: black;
 }
-#for-grid-50-50 {
+div.for-grid-50-50 {
   display: grid;
   grid-template-columns: 50% 50%;
   border: 1px solid black;
   box-shadow: 5px 10px;
+  /* grid-template-rows: auto; */
 }
 .imgFoodSection {
   overflow: hidden;
   border-radius: 5px 50px 5px;
   margin: 5px;
+  /* object-fit: cover; */
 }
 .imageOfFoods {
   width: 100%;
+  height: 200px;
   transition: transform 1s ease-in-out;
   z-index: 10000;
 }
@@ -235,17 +259,16 @@ margin-top: 1vh;
   cursor: pointer;
 }
 /* this css is for the part which is shown after clicking ordernow button */
-.margin-3vh{
+.margin-3vh {
   /* margin: 3vw 0 0 3vw; */
   margin: auto;
-
 }
-.for-dancingScript-font{
-/* font-family: 'festive'; */
-font-family: 'Dancing Script', cursive;
-font-family: 'Redressed', cursive;
+.for-dancingScript-font {
+  /* font-family: 'festive'; */
+  font-family: "Dancing Script", cursive;
+  font-family: "Redressed", cursive;
 
-font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 .margin-1vh {
   margin: 1vh;
@@ -258,6 +281,7 @@ font-size: 1.2rem;
 
 .qty-price-box {
   display: none;
+  z-index: 102;
 }
 .for-hide-show {
   position: fixed;

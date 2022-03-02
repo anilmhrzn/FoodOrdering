@@ -1,21 +1,22 @@
 <?php
 session_start();
 include 'db_config.php';
-if(!isset($_SESSION['USER_ID'])){
-    header("location:login.php");
+if (!isset($_SESSION['USER_ID'])) {
+    header("location:./../for-login-register/login.php");
     die();
 }
 ?>
-<?php include 'header.php';?>
+
+<?php include 'header.php'; ?>
 
 <body class="hideScrollBar">
     <!--this is used in js for background blur while registration form is opened by user  making whole webpage blur except registration form box-->
     <div id="content-except-register-form" class="for-content-except-register-form">
-        <?php include 'navbar.php'?>
+        <?php include 'navbar.php' ?>
         <div id="middle-body">
             <div id="main-content" class="grid-item">
-                <form id="for-search-form" action="http://localhost/FoodOrdering/landingpage/search-for-foods.php"
-                    method="GET" style="margin: 2vw;">
+                <!-- http://localhost/FoodOrdering/landingpage/search-for-foods.php -->
+                <form id="for-search-form" action="" method="GET" style="margin: 2vw;" onsubmit="";>
                     hungry? <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Hic, nostrum nesciunt rem, numquam veritatis fuga at obcaecati sed
                     sunt ut saepe vero nemo enim. Nostrum tempora fugiat aspernatur fuga
@@ -23,10 +24,12 @@ if(!isset($_SESSION['USER_ID'])){
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id quia, a ad dolorem at atque. Est vel
                     blanditiis adipisci corrupti dignissimos, ipsam sequi dolorum vitae voluptate sunt vero porro eum
                     dolore beatae.
+
+
                     <span id="searchbar">
-                        <input id="inputSearchBar" type="text" name="searched"
-                            placeholder="search for food or drinks" /><i class="fas fa-search search-icon"
-                            onclick="document.getElementById('for-search-form').submit()"></i>
+                        <input id="inputSearchBar" type="text" name="searched" placeholder="search for food or drinks" /><i class="fas fa-search search-icon" onclick="document.getElementById('for-search-form').submit();">
+                        <!-- document.querySelector('div.closeSearchedPanel').style.display='block'; -->
+                        </i>
                     </span>
                 </form>
                 <!-- </div> -->
@@ -42,6 +45,7 @@ if(!isset($_SESSION['USER_ID'])){
         <div id="categories-bar">
             <!-- show function is for showing the categories section on click -->
             <li id="appetizers" class="categories-button" onclick="show('appetizers','appetizers-section');">
+                <!-- if we click in this  the show function will be called where we send the appetizers to use this as id in js to select this for giving background color on click    -->
                 Appetizers
             </li>
             <li id="mainCourse" class="categories-button" onclick="show('mainCourse','mainCourse-section');">
@@ -55,24 +59,61 @@ if(!isset($_SESSION['USER_ID'])){
             </li>
         </div>
         <div id="appetizers-section" class="catedories-section">
-            <?php $category_id=1; include 'fetch_from_db_forcategories.php' ?>
+            <?php $category_id = 1;
+            include 'fetch_from_db_forcategories.php' ?>
         </div>
         <div id="mainCourse-section" class="catedories-section">
-            <?php $category_id=2; include 'fetch_from_db_forcategories.php' ?>
+            <?php $category_id = 2;
+            include 'fetch_from_db_forcategories.php' ?>
         </div>
         <div id="dessert-section" class="catedories-section">
-            <?php $category_id=3; include 'fetch_from_db_forcategories.php' ?>
+            <?php $category_id = 3;
+            include 'fetch_from_db_forcategories.php' ?>
         </div>
         <div id="drinks-section" class="catedories-section">
-            <?php $category_id=4; include 'fetch_from_db_forcategories.php' ?>
+            <?php $category_id = 4;
+            include 'fetch_from_db_forcategories.php' ?>
         </div>
-        <?php include 'footer.php';?>
     </div>
-    <?php 
-    include 'registration.php';
+    <?php
     include 'QtyPriceTable.php';
     ?>
-    
-</body>
+    <div  class="closeSearchedPanel for-search-panel">
+        
+        <?php
+        include 'db_config.php';
+        if ($_GET) {
+            ?>
+            <h1>did you searched for</h1><i class="fas fa-times-circle icon-close" onclick="document.querySelector('div.closeSearchedPanel').style.display='none'"></i>
+            <?php
+            $searched = strtolower($_REQUEST['searched']);
+            $sql = "SELECT * FROM `food` where name like '$searched%'";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    // echo $row['name'];
+                    // echo '<br><h1>' . $row['name'] . '</h1>';
+        ?>
+                    <div class='imgFoodSection'>
+                        <img src="<?php echo $row['image_address'] ?>" alt="sorry image is not availale......" class="imageOfFoods">
+                    </div>
+                    <div class="margin-3vh for-dancingScript-font">
+                        <h1 class=" for"><?php echo $row['name'] ?></h1><span style="margin:1vh;">
+                            <?php echo $row['description'] ?>
+                        </span>
+                        <h4>R.s.<?php echo $row['price'] ?></h4>
+                        <input type="button" value="order now" class="box button" onclick="showQtyBox(<?= $row['price'] ?>,'<?= $row['name'] ?>'); calculateAmount(document.getElementById('inputTagOfOrder').value);">
+                    </div>
+        <?php
+                }
+            } else {
+            }
+        }
+        ?>
+        <table class="for-adding-in-plate">
+        </table>
 
-</html>
+
+    </div>
+    <?php include 'footer.php'; ?>

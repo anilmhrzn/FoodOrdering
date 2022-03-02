@@ -14,7 +14,7 @@
                 <!-- <input type="number" id="orderQuantity" > -->
             </td>
             <td class="for-padding ">
-                <p id="totalAmt"></p>
+                R.s.<span id="totalAmt"></span>
 
 
             </td>
@@ -22,18 +22,8 @@
         <tr>
             <td colspan="2">
                 <div class="center">
-                    <input type="submit" name="order" value="order"  id="order-button"
-                        colspan="2"><i class="fas fa-times-circle icon-close" onclick="closeQtyPricePanel()"></i>
-                    <script>
-                    function closeQtyPricePanel() {
-                        element = document.getElementById("QtyPriceTable");
-                        element.style.display = "none";
-                    }
-                    // function abc() {
-                    //     num = document.getElementById("QtyPriceTable");
-                    //     console.log(num);
-                    // }
-                    </script>
+                    <input type="submit" name="order" value="add in plate"  id="order-button"
+                        colspan="2" ><i class="fas fa-times-circle icon-close" onclick="closeQtyPricePanel();"></i>
                 </div>
             </td>
         </tr>
