@@ -98,11 +98,7 @@ table.table-for-categories {
   align-items: center;
   margin: 4vh 0;
 }
-.for-admin-buttons {
-  margin: 4px;
-  /* width: 50%; */
-  min-width: 20px;
-}
+
 .for-img-of-admin {
   width: 20vw;
   margin: 0 auto 4px auto;
@@ -124,8 +120,22 @@ table.table-for-categories {
   text-align: center;
 }
 .style-for-textarea {
-      width: 97%;
-      height: 130px;
-      text-align: center;
-      margin: 5px;
+  width: 97%;
+  height: 130px;
+  text-align: center;
+  margin: 5px;
+}
+.button {
+  background-color: #adefd1ff;
+  color: #00203fff;
+  display: block;
+  width: fit-content;
+  border: outset grey;
+  margin: 10% auto;
+  padding: 2px 10px;
+  text-align: center;
+}
+.button-for-view-update {
+  margin: 4px auto;
+  padding: 3px;
 }

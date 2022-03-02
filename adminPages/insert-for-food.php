@@ -76,7 +76,7 @@ include 'admin-navbar.php';
                 </tr>
             </table>
         </form>
-        <h1><?php echo $e_messsage_for_fileupload?></h1>
+        <h1><?php if(isset($e_messsage_for_fileupload)) echo $e_messsage_for_fileupload?></h1>
     <h1 class="center-text"><a href="http://localhost/FoodOrdering/adminPages/categories.php">Go Back</a></h1>
 
 <?php

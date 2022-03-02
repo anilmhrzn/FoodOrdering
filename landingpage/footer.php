@@ -1,11 +1,24 @@
-<footer style="background-color: #00203fff; color:#adefd1ff; text-align: center;">
+<footer>
+    <!-- style="background-color: #00203fff; color:#adefd1ff; text-align: center;" -->
+    <!-- <div style="width: 100vw;">
+    
+    <img src="./../images/foodImages/hungerheistForAboutUs.jpg" style="margin:auto;" alt="" srcset="">
+</div> -->
 
-    <h1 id="aboutUs" style="text-align: center;">
-        about us <br>
+    <!-- about uss -->
+
+    <div class="for-about-us-section">
+
+        <div>
+        <h1 id="aboutUs" class="center">
+        About Us <br>
     </h1>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi temporibus aspernatur eos aliquid velit quas,
-    perferendis vel excepturi doloremque delectus, nobis quae provident ipsa laudantium atque voluptates quia possimus
-    placeat iusto. Est.
+            <span class="large-font-size">"</span>
+            Food paradise is all about serving high qulaity foods to customers through a website to your doorsteps.<span
+                class="large-font-size">"</span>
+        </div>
+    </div>
+
     <hr width="70%" style="margin: 10px auto;">
     <div class="grid-item footerContactUsAndConnect">
         <div id="connectWithUs">
@@ -36,4 +49,5 @@
     ab quis et consequuntur numquam.
 </footer>
 </body>
+
 </html>

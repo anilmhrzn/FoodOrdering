@@ -1,4 +1,4 @@
-function viewImg(id) {
+function viewAndHide(id) {
   if (event.target.value == "view") {
     console.log(id);
     document.getElementById(id).style.display = "block";

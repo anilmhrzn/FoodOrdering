@@ -17,30 +17,29 @@ include 'admin-navbar.php';
             <th>functions</th>
         </tr>
         <?php
-include './../landingpage/db_config.php';
-$sql = "SELECT * FROM category where status=1";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-while($row = $result->fetch_assoc()) {
-?>
+        include './../landingpage/db_config.php';
+        $sql = "SELECT * FROM category where status=1";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+        ?>
         <tr>
             <td>
                 <?php
-                echo $row['id'];?>
+                        echo $row['id']; ?>
             </td>
             <td>
                 <?php
-                echo $row['name'];?>
+                        echo $row['name']; ?>
             </td>
             <td>
-
-                <input class="for-admin-buttons" type="button" value="view"
-                    onclick="viewImg('<?php echo $row['name']?>');console.log('<?php echo $row['name']?>')">
-
+                <a href="#<?php echo $row['name'] ?>"><input class="button-for-view-update" type="button" value="view"
+                        onclick="viewAndHide('<?php echo $row['name'] ?>');">
+                </a>
         </tr>
         <?php
-        }}
-        else {
+            }
+        } else {
             echo "0 results of ";
         }
         $conn->close();
@@ -48,44 +47,44 @@ while($row = $result->fetch_assoc()) {
     </table>
 </div>
 
-    <?php
-        $category_id=1;
-        ?>
-<div id="<?php echo categoryName($category_id);?>">
+<?php
+$category_id = 1;
+?>
+<div id="<?php echo categoryName($category_id); ?>">
 
     <?php
-        include 'fetch-categories-for-admin.php';
-        ?>
+    include 'fetch-categories-for-admin.php';
+    ?>
 </div>
 </div>
 <?php
-        $category_id=2;
-        ?>
-<div id="<?php echo categoryName($category_id);?>">
+$category_id = 2;
+?>
+<div id="<?php echo categoryName($category_id); ?>">
 
     <?php
-        include 'fetch-categories-for-admin.php';
-        ?>
+    include 'fetch-categories-for-admin.php';
+    ?>
 </div>
 </div>
 <?php
-        $category_id=3;
-        ?>
-<div id="<?php echo categoryName($category_id);?>">
+$category_id = 3;
+?>
+<div id="<?php echo categoryName($category_id); ?>">
 
     <?php
-        include 'fetch-categories-for-admin.php';
-        ?>
+    include 'fetch-categories-for-admin.php';
+    ?>
 </div>
 </div>
 <?php
-        $category_id=4;
-        ?>
-<div id="<?php echo categoryName($category_id);?>">
+$category_id = 4;
+?>
+<div id="<?php echo categoryName($category_id); ?>">
 
     <?php
-        include 'fetch-categories-for-admin.php';
-        ?>
+    include 'fetch-categories-for-admin.php';
+    ?>
 </div>
 </div>
 

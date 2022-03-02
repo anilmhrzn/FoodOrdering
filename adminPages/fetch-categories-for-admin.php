@@ -1,5 +1,5 @@
 <h1 style="text-align:center"><?php echo categoryName($category_id);?> Table</h1>
-<a href="insert-for-food.php"  style="display:block;text-align:center;">insert in this category</a>
+<a href="insert-for-food.php"   class="button">Insert in this category</a>
 <div class='for-table'>
     <table>
         <tr>
@@ -56,8 +56,8 @@ if ($result->num_rows > 0) {
             </td>
             <td>
                 <!-- <input type="button" class="for-admin-buttons" value="Update"> -->
-                <a href="http://localhost/FoodOrdering/adminPages/update-for-food.php?id=<?=$row['id']?>" class="for-admin-buttons" >Update</a>
-                <input type="button" class="for-admin-buttons" value="Delete">
+                <a href="http://localhost/FoodOrdering/adminPages/update-for-food.php?id=<?=$row['id']?>"  ><input type="button" value="Update" class="button-for-view-update"></a>
+                <input type="button" class="button-for-view-update" value="Delete">
             </td>
 
         </tr>

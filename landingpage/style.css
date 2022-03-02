@@ -148,9 +148,12 @@
   transform: scale(1.2);
 }
 div.for-search-panel {
-  background-color: red;
-  width: auto;
-  height: 50%;
+  background-color: rgb(218, 248, 234);
+  /* color: #00203fff; */
+  border-radius: 5px;
+  width: 25vw;
+  height: auto;
+  max-height:60vh ;
   position: fixed;
   bottom: 0px;
   right: 0px;
@@ -160,6 +163,21 @@ div.for-search-panel {
   overflow-x: hidden;
   /* display: none; */
 }
+h3.heding-of-searched-results{
+  background-color: #00203fff;
+  color: #adefd1ff;
+  text-align: center;
+  border-radius: 20px;
+}
+/* div.for-search-panel::-webkit-scrollbar{*/
+  /* display: none; */
+  /* scrollbar-width: auto; */
+  /* width: 8px; */
+  /* border: none; */
+  /* background-color: transparent; */
+/* }  */
+
+
 #slider {
   overflow: hidden;
   width: 50vw;
@@ -460,4 +478,23 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.for-border{
+border-top: 3px solid black;
+margin-top: 5px;
+}
+/* for about us section */
+.large-font-size{
+  font-size: 3rem;
+}
+.for-about-us-section{
+  background-image: url(./../images/foodImages/forAboutUs.jpg);
+  /* background-size: 100; */
+  height: 50vh;
+  color: #adefd1ff;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

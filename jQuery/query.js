@@ -29,13 +29,12 @@ function show(id, idofcategories) {
 
   element = document.getElementById(id);
   element.style.backgroundColor = "#41b3a3";
-
   showCategories(idofcategories);
 }
 // for showing the clicked categories section
 function showCategories(id) {
   element = document.getElementById(id);
-  element.classList.add("show-categories-section"); // show categories has styling which makes user visble the requierd block ...
+  element.classList.add("show-categories-section"); // show categories has styling which makes user visible the requierd block ...
 }
 var qty = 1;
 var price;
