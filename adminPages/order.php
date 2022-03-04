@@ -10,7 +10,7 @@ include 'admin-navbar.php';
 <div>
 
     <h1 style="display:block;">
-        this is for customers details
+        this is for orders details
         
     </h1>
 </div>

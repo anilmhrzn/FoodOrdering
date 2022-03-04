@@ -48,15 +48,15 @@ if ($result->num_rows > 0) {
         ?>
             </td>
             <td>
-                <input class="for-admin-buttons" type="button" value="view"
-                    onclick="viewImg('<?php echo $row['image_address'];?>')">
+                <input style="width:100%;" class="button-for-view-update" type="button" value="view"
+                    onclick="viewAndHide('<?php echo $row['image_address'];?>')" >
                 <img class="for-img-of-admin" id="<?php echo $row['image_address'];?>"
                     src="<?php echo $row['image_address'];?>" alt="image not available">
 
             </td>
             <td>
                 <!-- <input type="button" class="for-admin-buttons" value="Update"> -->
-                <a href="http://localhost/FoodOrdering/adminPages/update-for-food.php?id=<?=$row['id']?>"  ><input type="button" value="Update" class="button-for-view-update"></a>
+                <a href="http://localhost/FoodOrdering/adminPages/insert-for-food.php?id=<?=$row['id']?>"  ><input type="button" value="Update" class="button-for-view-update"></a>
                 <input type="button" class="button-for-view-update" value="Delete">
             </td>
 

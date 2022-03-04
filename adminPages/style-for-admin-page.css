@@ -73,7 +73,12 @@ nav ul {
 ul li {
   color: white;
 }
-
+/* for-insert-update-heading */
+.for-insert-update-heading{
+  text-align: center;
+  background-color: rgb(124, 148, 137);
+  font-size: 1.6rem;
+}
 /* for table in categories */
 table,
 tr,
@@ -113,8 +118,7 @@ table.table-for-categories {
 /* for inset page of admin categories */
 .for-food-form-admin-page {
   border: 1px solid black;
-  margin: 5vh auto;
-  padding: 10px;
+  margin: 1vh auto 0 auto ;
 }
 .center-text {
   text-align: center;
@@ -131,11 +135,47 @@ table.table-for-categories {
   display: block;
   width: fit-content;
   border: outset grey;
-  margin: 10% auto;
+  margin: 4vh auto;
   padding: 2px 10px;
   text-align: center;
+  
 }
 .button-for-view-update {
   margin: 4px auto;
   padding: 3px;
+  border-radius: 5px;
+}
+
+/* for error */
+i.error{
+  color: red;
+  font-weight: bold;
+}
+/* for sucess */
+.sucess{
+  color: green;
+  font-weight: bold;
+}
+/* go back button of insert page */
+.goBackButton{
+  background-color: #adefd1ff;
+
+}
+.goBackButton:hover{
+  background-color: rgb(99, 236, 174);
+  cursor: pointer;
+}
+
+/* for submit button */
+.forSubmitButton{
+  background-color: rgb(78, 219, 78);
+  width: 50%;
+  font-weight: bold;
+  color: white;
+  padding: 1vh 0;
+  border-radius: 5px;
+}
+.forSubmitButton:hover{
+  background-color: rgb(23, 143, 23);
+  cursor: pointer;
 }

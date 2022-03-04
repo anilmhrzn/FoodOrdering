@@ -112,16 +112,13 @@ if (!isset($_SESSION['USER_ID'])) {
         <?php
                 }
             } else {?>
-        <h1>did you searched for <br> " <?php echo $_REQUEST['searched']?>" <br> not available </h1><i
-            class="fas fa-times-circle icon-close"
-            onclick="document.querySelector('div.closeSearchedPanel').style.display='none'"></i>
-        <?php 
+    <h1>did you searched for <br> " <?php echo $_REQUEST['searched']?>" <br> not available </h1><i
+    class="fas fa-times-circle icon-close"
+    onclick="document.querySelector('div.closeSearchedPanel').style.display='none'"></i>
+    <?php 
 
-            }
-        } 
-        ?>
-
-
-
-        
-        <?php include 'footer.php'; ?>
+}
+} 
+?>
+</div>
+    <?php include 'footer.php'; ?>

@@ -498,6 +498,7 @@ input::-webkit-inner-spin-button {
 }
 .for-footer {
   background-color: #00203fff;
+  color: #adefd1ff;
   /* display: grid; */
   /* grid-template-columns: 1fr 1fr; */
   margin: 5vw;
@@ -512,11 +513,20 @@ input::-webkit-inner-spin-button {
 /* p:last-child {
   background: #ff0000;
 } */
-.center-row-wise {
-  /* display: flex;
-  justify-content: center; */
+div.center-row-wise {
   text-align: center;
 }
+div.center-row-wise>a{
+  text-decoration: none;
+  color: #adefd1ff;
+}
+
+  /* display: flex;
+  justify-content: center; */
+  /* display: flex;
+justify-content: center;
+align-items: center; */
+/* } */
 h1.center-row-wise {
   /* background-color: #adefd1ff; */
   /* color: #00203fff; */
@@ -529,14 +539,23 @@ h1.center-row-wise {
 
 }
 .forSocialIcons {
-  background-color: #adefd1ff;
-  color: #00203fff;
+  /* background-color: #adefd1ff; */
+  /* color: #00203fff; */
   margin: 5px;
   padding: 1vw;
+  /* height: 2.5rem;
+  width: 2.5rem; */
   font-size: 1.7rem;
   border-radius: 50%;
+  transition: transform 0.2s;
 }
-.for-whatsapp {
+.forSocialIcons:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+/* .for-whatsapp {
   background-color: green;
 }
 .for-viber {
@@ -544,4 +563,4 @@ h1.center-row-wise {
 }
 .for-gmail {
   background-image: linear-gradient(to right, white, red);
-}
+} */

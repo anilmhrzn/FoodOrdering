@@ -1,4 +1,13 @@
+
 <table id="QtyPriceTable" class="qty-price-box for-hide-show for-dancingScript-font">
+    <tr>
+        
+        <th  colspan="2" class="for-padding">
+            <div class="center">
+                <i class="fas fa-times-circle icon-close" onclick="closeQtyPricePanel();"></i>
+            </div>
+        </th>
+    </tr>
         <tr>
             <th class="for-padding">quantity</th>
             <th class="for-padding">price</th>
@@ -22,8 +31,7 @@
         <tr>
             <td colspan="2">
                 <div class="center">
-                    <input type="submit" name="order" value="add in plate"  id="order-button"
-                        colspan="2" ><i class="fas fa-times-circle icon-close" onclick="closeQtyPricePanel();"></i>
+                    <input type="submit" name="order" value="add in plate"  id="order-button">
                 </div>
             </td>
         </tr>

@@ -1,3 +1,5 @@
+  
+
 <script>
 window.onload = () => {
     document.getElementById('categories-for-navbar').classList.add('active');
@@ -7,6 +9,13 @@ window.onload = () => {
 include 'admin-header.php';
 include 'admin-navbar.php';
 ?>
+<?php
+if($_GET){?>
+<p class="sucess center-text" ><?=$_GET['e_messsage_for_fileupload']?></p>
+<?php
+}
+?>
+  
 <h1 style="text-align:center">Category Table</h1>
 
 <div class='for-table'>
