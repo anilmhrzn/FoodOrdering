@@ -38,6 +38,10 @@ $error_message="please enter valid <br> username and password";
     <?php
     include 'loginBody.php';
     ?>
+    <p class="text-align-center">
+<a href="http:\\localhost\FoodOrdering\for-login-register\registration-form.php">Create a account</a>
+</p>
+
     
 </body>
 

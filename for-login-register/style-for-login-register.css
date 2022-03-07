@@ -10,6 +10,7 @@ body {
   margin-top: 10vh;
   display: grid;
   justify-content: center;
+  /* height: 50vh; */
 }
 #companyname {
   /* position: relative;
@@ -38,7 +39,7 @@ body {
   padding: 0 5vw;
   background-color: #adefd1ff;
   border-radius: 10px;
-  height: 50vh;
+  height: 39vh;
   overflow-y: scroll;
 }
 #for-form::-webkit-scrollbar {

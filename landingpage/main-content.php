@@ -6,37 +6,22 @@ if (!isset($_SESSION['USER_ID'])) {
     die();
 }
 ?>
-
 <?php include 'header.php'; ?>
-
 <body class="hideScrollBar">
-    <!--this is used in js for background blur while registration form is opened by user  making whole webpage blur except registration form box-->
     <?php include 'navbar.php' ?>
     <div id="middle-body">
         <div id="main-content">
-            <!-- http://localhost/FoodOrdering/landingpage/search-for-foods.php -->
             <form id="for-search-form" action="" method="GET" style="margin: 2vw;">
-                <!-- <div style="width: 100vw;"> -->
                 <div class="center">
                     <img src="./../images/foodImages/hungerheist.jpg" style="margin:auto; height:50vh;" alt="">
                 </div>
-                <!-- </div> -->
-
-
                 <span id="searchbar">
                     <input id="inputSearchBar" type="text" name="searched" placeholder="search for food or drinks" /><i
                         class="fas fa-search search-icon"
                         onclick="document.getElementById('for-search-form').submit();">
-                        <!-- document.querySelector('div.closeSearchedPanel').style.display='block'; -->
                     </i>
                 </span>
             </form>
-            <!-- </div> -->
-            <!-- <div id="slider">
-                    <ul id="slideWrap">
-                        <li><img src="./../images/foodImages/pizza.jpg"></li>
-                    </ul>
-                </div> -->
         </div>
     </div>
     <div id="categories-bar">
@@ -57,19 +42,19 @@ if (!isset($_SESSION['USER_ID'])) {
     </div>
     <div id="appetizers-section" class="catedories-section">
         <?php $category_id = 1;
-            include 'fetch_from_db_forcategories.php' ?>
+            include 'fetch_categories.php' ?>
     </div>
     <div id="mainCourse-section" class="catedories-section">
         <?php $category_id = 2;
-            include 'fetch_from_db_forcategories.php' ?>
+            include 'fetch_categories.php' ?>
     </div>
     <div id="dessert-section" class="catedories-section">
         <?php $category_id = 3;
-            include 'fetch_from_db_forcategories.php' ?>
+            include 'fetch_categories.php' ?>
     </div>
     <div id="drinks-section" class="catedories-section">
         <?php $category_id = 4;
-            include 'fetch_from_db_forcategories.php' ?>
+            include 'fetch_categories.php' ?>
     </div>
     </div>
     <?php
@@ -106,19 +91,19 @@ if (!isset($_SESSION['USER_ID'])) {
                 </span>
                 <h6>R.s.<?php echo $row['price'] ?></h6>
                 <input type="button" value="order now" class="box button"
-                    onclick="showQtyBox(<?= $row['price'] ?>,'<?= $row['name'] ?>'); calculateAmount(document.getElementById('inputTagOfOrder').value);">
+                    onclick="showQtyBox(<?= $row['price'] ?>,'<?= $row['name'] ?>',<?= $row['id'] ?>); calculateAmount(document.getElementById('inputTagOfOrder').value);">
             </div>
         </div>
         <?php
                 }
             } else {?>
-    <h1>did you searched for <br> " <?php echo $_REQUEST['searched']?>" <br> not available </h1><i
-    class="fas fa-times-circle icon-close"
-    onclick="document.querySelector('div.closeSearchedPanel').style.display='none'"></i>
-    <?php 
+        <h1>did you searched for <br> " <?php echo $_REQUEST['searched']?>" <br> not available </h1><i
+            class="fas fa-times-circle icon-close"
+            onclick="document.querySelector('div.closeSearchedPanel').style.display='none'"></i>
+        <?php 
 
-}
-} 
-?>
-</div>
+        }
+    } 
+        ?>
+    </div>
     <?php include 'footer.php'; ?>

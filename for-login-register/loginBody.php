@@ -26,10 +26,7 @@
                 <input type="submit" name="login" value="login">
             </p>
             </p>
-            <p class="text-align-center">
+            </form>
 
-                <a href="http:\\localhost\FoodOrdering\for-login-register\registration-form.php">Create a account</a>
-            </p>
-        </form>
-
-    </div>
+</div>
+            

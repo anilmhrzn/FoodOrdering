@@ -38,26 +38,33 @@ function showCategories(id) {
 }
 var qty = 1;
 var price;
+
 // for displaying qty price box
-function showQtyBox(price, name) {
+function showQtyBox(price,name,id) {
   this.price = price;
+  document.querySelector('input.forQtyTableName').value=name;
+  document.querySelector('input.forOrderedFoodId').value=id;
+  console.log(id);
   element = document.getElementById("QtyPriceTable");
   element.style.display = "block";
-  calculateAmount(qty);
+  calculateAmount(qty,id);
 }
 // for price
-function calculateAmount(qty) {
+function calculateAmount(qty,id) {
   // this calculates and updates the price according to user given value
-  document.getElementById("totalAmt").innerText = qty > 9999 ? "not available!!" : `${qty * price}`;
+  document.getElementById("totalAmt").value = qty > 9999 ? "not available!!" : `${qty * price}`;
+
 }
 function closeQtyPricePanel() {
   element = document.getElementById("QtyPriceTable");
   element.style.display = "none";
 }
-function addInPlate(){
+function addInPlate(id){
   parentElement=document.querySelector("table.for-adding-in-plate");
   parentElement.appendChild(document.createElement('tr').classList.add('newTrForPlateTable'));
   console.log(document.getElementById("totalAmt").innerText);
+  sessionStorage.setItem("orderedFoodId", 'id');
+  
 
 }
 
@@ -66,3 +73,12 @@ window.onload = function () {
   show("appetizers", "appetizers-section");
   // this shows appetizers section when the website is loaded
 };
+
+
+// // for Order Page
+// function forOrderPage(){
+//   quantity=document.getElementById('inputTagOfOrder').value;
+//   console.log(quantity);
+//   sessionStorage.setItem("quantity", 'quantity');
+//   cook
+// }

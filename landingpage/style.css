@@ -564,3 +564,21 @@ h1.center-row-wise {
 .for-gmail {
   background-image: linear-gradient(to right, white, red);
 } */
+
+
+
+
+ /* oreder page */
+ .center-text{
+   text-align: center;
+ }
+
+ /* for border in table of order page */
+ table.for-border,
+ table.for-border tr,
+ table.for-border tr th,
+ table.for-border tr td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}

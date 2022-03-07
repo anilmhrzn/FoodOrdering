@@ -3,10 +3,10 @@
     $sql = "SELECT * FROM food where category_id=$category_id";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-
-?>
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            ?>
+            <!-- $_SESSION['orderedFoodId']=row; -->
 <div>
     <div class="for-grid-50-50">
         <div class='imgFoodSection'>
@@ -18,7 +18,7 @@
             </span>
             <h4>R.s.<?php echo $row['price'] ?></h4>
             <input type="button" value="order now" class="box button"
-                onclick="showQtyBox(<?=$row['price']?>,'<?=$row['name']?>'); calculateAmount(document.getElementById('inputTagOfOrder').value);">
+                onclick="showQtyBox(<?=$row['price']?>,'<?=$row['name']?>',<?=$row['id']?>); calculateAmount(document.getElementById('inputTagOfOrder').value);">
         <!-- TODO: make a div which will hold data of items order also decide what to do after i clicked order  -->
         </div>
     </div>
