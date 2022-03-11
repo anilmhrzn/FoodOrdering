@@ -179,3 +179,12 @@ i.error{
   background-color: rgb(23, 143, 23);
   cursor: pointer;
 }
+
+
+/* this is for order page */
+.delivered{
+background-color: green;
+}
+.not-delivered{
+background-color: red;
+}

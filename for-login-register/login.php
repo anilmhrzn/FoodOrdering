@@ -1,23 +1,24 @@
 <?php
 session_start();
 include './../landingpage/db_config.php';
-$error_message='';
-if(isset($_POST['login'])){
-  $username=mysqli_real_escape_string($conn,$_POST['username-for-login']);
-  $password=mysqli_real_escape_string($conn,$_POST['password-for-login']);
-  $sql = "SELECT id , username , password FROM customer where username='$username' && password='$password'";
+$error_message = '';
+if (isset($_POST['login'])) {
+  $username = mysqli_real_escape_string($conn, $_POST['username-for-login']);
+  $password = mysqli_real_escape_string($conn, $_POST['password-for-login']);
+  $sql = "SELECT id , username , password FROM customer where username='$username' && password='$password' && status=1";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     // output data of each row
-    if($row = $result->fetch_assoc()) {
-        $_SESSION['USER_ID']=$row['id'];
-        $_SESSION['USER_NAME']=$row['username'];
-        header("location:./../landingpage/main-content.php");
+    if ($row = $result->fetch_assoc()) {
+      session_unset();
+      //for unseting session used in activation link
+      $_SESSION['USER_ID'] = $row['id'];
+      $_SESSION['USER_NAME'] = $row['username'];
+      header("location:./../landingpage/main-content.php");
     }
-}
-else{
-$error_message="please enter valid <br> username and password";
-}
+  } else {
+    $error_message = "please enter valid <br> username and password";
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -26,7 +27,8 @@ $error_message="please enter valid <br> username and password";
 <head>
     <!-- <link rel="stylesheet" href="style-for-login.css"> -->
     <link rel="stylesheet" href="style-for-login-register.css">
-  <!-- <script src="./../jQuery/JsForLoginRegister.js"> -->
+    <link rel="shortcut icon" href="./../images/tab_icon.png">
+    <!-- <script src="./../jQuery/JsForLoginRegister.js"> -->
     <title>login page</title>
     <!-- for font -->
     <link
@@ -36,13 +38,18 @@ $error_message="please enter valid <br> username and password";
 
 <body>
     <?php
-    include 'loginBody.php';
-    ?>
-    <p class="text-align-center">
-<a href="http:\\localhost\FoodOrdering\for-login-register\registration-form.php">Create a account</a>
-</p>
+  include 'loginBody.php';
+  ?>
+    <p class="text-align-center bg-color-root">
+        <a href="http:\\localhost\FoodOrdering\for-login-register\registration-form.php">Create A New Account</a>
+        <br>
+        <span>
+          <?=(isset($_SESSION['notice'])) ?  $_SESSION['notice'] : ''; ?>
+          <?=(isset($_SESSION['eMsg'])) ? $_SESSION['eMsg'] : '' ?>
+        </span>
+    </p>
 
-    
+
 </body>
 
 </html>

@@ -5,40 +5,40 @@ $e_messsage_for_fileupload = '';
 //including the configuration file.
 //If something has been posted from the form
 if ($_POST) {
-    include './../landingpage/db_config.php';
-    $foodName = $_POST['food-name'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
-    $categoryId = $_POST['category_id'];
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $sql = "UPDATE food SET `name` = '$foodName',`price` = '$price',`description`='$description', `category_id` = '$categoryId' WHERE id = $id";
-    } else {
-        
+    if (trim($_POST['food-name']) != '' && trim($_POST['description']) != '' && trim($_POST['price']) != '') {
+        include './../landingpage/db_config.php';
+        $foodName = $_POST['food-name'];
+        $price = $_POST['price'];
+        $description = $_POST['description'];
+        $categoryId = $_POST['category_id'];
         $img_address = './../images/foodImages/' . $_FILES['fileToUpload']['name'];
-        $sql = "INSERT into food(name,price,description,category_id,image_address) VALUES ('$foodName', '$price','$description','$categoryId','$img_address ')";
-    }
-    // TODO:fronted validation left and image inserting not done
-    if(trim($foodName)!='' && trim($price)!='' && trim($description)!=''){
+        require './image_uploadCheck.php';
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    $sql = "UPDATE food SET `name` = '$foodName',`price` = '$price',`description`='$description', `category_id` = '$categoryId' , image_address = '$img_address' WHERE id = $id";
+                } else {
 
-        if (mysqli_query($conn, $sql)) {
-            // echo "New record added successfully";
-            $e_messsage_for_fileupload = 'New record added successfully';
-            if (isset($_GET['id'])){
+                    $sql = "INSERT into food(name,price,description,category_id,image_address) VALUES ('$foodName', '$price','$description','$categoryId','$img_address ')";
+                }
+                // TODO:fronted validation left and image inserting not done
 
-                header('Location: http://localhost/FoodOrdering/adminPages/insert-for-food.php?e_messsage_for_fileupload=New record added/updated successfully&id='.$id);
-            }
-            header('Location: http://localhost/FoodOrdering/adminPages/categories.php?e_messsage_for_fileupload=record was sucessfully inserted');
+                if (mysqli_query($conn, $sql)) {
+                    // echo "New record added successfully";
+                    // $e_messsage_for_fileupload = 'New record added successfully';
+                    // if (isset($_GET['id'])){
 
-            // echo "<br /> <a href='http://localhost/FoodOrdering/adminPages/categories.php'
-            // >Go back</a>";
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-        mysqli_close($conn);
-    }else{
-    $e_messsage_for_fileupload = 'none of the field should be empty';
+                    //     header('Location: http://localhost/FoodOrdering/adminPages/insert-for-food.php?e_messsage_for_fileupload=New record added/updated successfully&id='.$id);
+                    // }
+                    header('Location: http://localhost/FoodOrdering/adminPages/categories.php?e_messsage_for_fileupload=record was sucessfully inserted/updated');
 
+                    // echo "<br /> <a href='http://localhost/FoodOrdering/adminPages/categories.php'
+                    // >Go back</a>";
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                }
+                mysqli_close($conn);
+    } else {
+        $e_messsage_for_fileupload = 'none of the field should be empty';
     }
 }
 if ($_GET) {
@@ -116,13 +116,16 @@ if ($_GET) {
                 </td>
                 <td>
                     <select name="category_id">
-                        <option value="1" <?php  if (isset($food['category_id'])) echo $food['category_id'] == 1 ? 'selected' : ''; ?>>
+                        <option value="1" <?php if (isset($food['category_id'])) echo $food['category_id'] == 1 ? 'selected' : ''; ?>>
                             Appetizer</option>
-                        <option value="2" <?php if (isset($food['category_id'])) echo $food['category_id'] == '2' ? 'selected' : ''; ?>>Main
+                        <option value="2" <?php if (isset($food['category_id'])) echo $food['category_id'] == '2' ? 'selected' : ''; ?>>
+                            Main
                             Course</option>
-                        <option value="3" <?php if (isset($food['category_id'])) echo  $food['category_id'] == '3' ? 'selected' : ''; ?>>Dessert
+                        <option value="3" <?php if (isset($food['category_id'])) echo  $food['category_id'] == '3' ? 'selected' : ''; ?>>
+                            Dessert
                         </option>
-                        <option value="4" <?php if (isset($food['category_id'])) echo $food['category_id'] == '4' ? 'selected' : ''; ?>>Drinks
+                        <option value="4" <?php if (isset($food['category_id'])) echo $food['category_id'] == '4' ? 'selected' : ''; ?>>
+                            Drinks
                         </option>
                     </select>
                 </td>
@@ -137,12 +140,9 @@ if ($_GET) {
                     ?>
                         <img src="<?= $food['image_address'] ?>" alt="" width="100px">
                     <?php
-                    } else {
-                    ?>
-                        <input type="file" name="fileToUpload" id="fileToUpload" />
-                    <?php
                     }
                     ?>
+                    <input type="file" name="fileToUpload" id="fileToUpload" />
                 </td>
             </tr>
             <tr>
@@ -160,15 +160,15 @@ if ($_GET) {
 
             </tr>
             <tr>
-                <?php if(isset($_GET['e_messsage_for_fileupload'])){?>
-                <td colspan="2">
-                    <i class="sucess"><?php echo $_GET['e_messsage_for_fileupload']; ?></i>
-                </td>
+                <?php if (isset($_GET['e_messsage_for_fileupload'])) { ?>
+                    <td colspan="2">
+                        <i class="sucess"><?php echo $_GET['e_messsage_for_fileupload']; ?></i>
+                    </td>
                 <?php
                 }
                 ?>
                 <td colspan="2">
-                    <i class="error"><?php if((isset($e_messsage_for_fileupload)))  echo $e_messsage_for_fileupload ; ?></i>
+                    <i class="error"><?php if ((isset($e_messsage_for_fileupload)))  echo $e_messsage_for_fileupload; ?></i>
                 </td>
 
             </tr>

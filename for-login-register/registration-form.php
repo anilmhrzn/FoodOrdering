@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +34,7 @@
                     Name:
                 </label>
                 <br>
-                <input type="text" name="full-name" id="full-name">
+                <input type="text" name="full-name" id="full-name" required>
                 <i style="display:block;" id="full-name-validation" class="fa fa-solid fa-circle-exclamation margin-top"></i>
             </p>
             <p>
@@ -40,7 +43,7 @@
                     <br>
                 </label>
 
-                <br><input type="number" name="phone-number" id="phone-number">
+                <br><input type="number" name="phone-number" id="phone-number" required>
                 <br>
             <p style="display:block;" id="phone-number-validation" class="fa fa-solid fa-circle-exclamation margin-top">
             </p>
@@ -52,7 +55,7 @@
                     Age:
                     <br>
                 </label>
-                <br><input type="number" name="age" id="age">
+                <br><input type="number" name="age" id="age" required>
                 <br>
             <p style="display:block;" id="age-validation" class="fa fa-solid fa-circle-exclamation margin-top"></p>
 
@@ -64,7 +67,7 @@
                     Address:
                     <br>
                 </label>
-                <br> <input type="text" name="address" id="address">
+                <br> <input type="text" name="address" id="address" required>
                 <br>
             <p style="display:block;" id="address-validation" class="fa fa-solid fa-circle-exclamation margin-top"></p>
 
@@ -76,7 +79,7 @@
                     <br>
                 </label>
 
-                <br> <input type="email" name="email" id="email">
+                <br> <input type="email" name="email" id="email" required>
                 <br>
             <p style="display:block;" id="email-validation" class="fa fa-solid fa-circle-exclamation margin-top"></p>
 
@@ -88,7 +91,7 @@
                     <br>
                 </label>
 
-                <br> <input type="text" name="username" id="username">
+                <br> <input type="text" name="username" id="username" required>
                 <br>
             <p style="display:block;" id="username-validation" class="fa fa-solid fa-circle-exclamation margin-top"></p>
             
@@ -98,7 +101,7 @@
                     Password:
                     <br>
                 </label>
-                <br> <input type="text" name="password" id="password">
+                <br> <input type="password" name="password" id="password" required>
                 <br>
                 <p style="display:block;" id="password-validation" class="fa fa-solid fa-circle-exclamation margin-top">
                 </p>
@@ -109,7 +112,7 @@
                     Re-enter Password:
                     <br>
                 </label>
-                <br><input type="text" name="re-entered-password" id="re-entered-password">
+                <br><input type="password" name="re-entered-password" id="re-entered-password" required>
                 <br>
             <p style="display:block;" id="re-entered-password-validation"
                 class="fa fa-solid fa-circle-exclamation margin-top"></p>
@@ -119,11 +122,15 @@
 
                 <input type="submit" value="submit">
             </p>
-            <p class="text-align-center">
-                <a href="http:\\localhost\FoodOrdering\for-login-register\login.php" style="margin:auto">already have a
-                    account</a>
-            </p>
         </form>
+        <p class="text-align-center bg-color-root" >
+            <a href="http:\\localhost\FoodOrdering\for-login-register\login.php" style="margin:auto" style="color: yellow;">Already Have A
+                Account</a>
+                <p>
+                    <?=(isset($_SESSION['notice']) ? $_SESSION['notice'] :'' )?>
+                    <?=(isset($_SESSION['eMsg'])) ? $_SESSION['eMsg'] :''?>
+                </p>
+        </p>
     </div>
 
 </body>

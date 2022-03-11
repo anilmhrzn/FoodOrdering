@@ -1,6 +1,6 @@
 <?php
     include 'db_config.php';
-    $sql = "SELECT * FROM food where category_id=$category_id";
+    $sql = "SELECT * FROM food where category_id=$category_id and status=1";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row

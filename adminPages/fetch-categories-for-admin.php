@@ -56,8 +56,10 @@ if ($result->num_rows > 0) {
             </td>
             <td>
                 <!-- <input type="button" class="for-admin-buttons" value="Update"> -->
-                <a href="http://localhost/FoodOrdering/adminPages/insert-for-food.php?id=<?=$row['id']?>"  ><input type="button" value="Update" class="button-for-view-update"></a>
-                <input type="button" class="button-for-view-update" value="Delete">
+                <a href="http://localhost/FoodOrdering/adminPages/insert-for-food.php?id=<?=$row['id']?>">
+                <input type="button" value="Update" class="button-for-view-update"></a>
+                
+                <a href="http://localhost/FoodOrdering/adminPages/for-delete.php?id=<?=$row['id']?>" ><input type="button" class="button-for-view-update" value="Delete"></a>
             </td>
 
         </tr>

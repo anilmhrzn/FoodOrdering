@@ -16,9 +16,12 @@ function categoryName($category_id) {
 
 <head>
     <title>Document</title>
+    <link rel="shortcut icon" href="./../images/tab_icon.png">
+
     <link rel="stylesheet" href="style-for-admin-page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="JsForAdminpage.js"></script>
 
 </head>
+
 <body>

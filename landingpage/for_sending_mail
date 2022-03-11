@@ -1,0 +1,10 @@
+<?php
+$to = 'anilmaharjan995@gmail.com';
+$subject = 'Test email'; 
+$message = "Hello World! This is my first mail."; 
+$headers = "From: foodparadisefeelslikeheaven@gmail.com";
+if( mail( $to, $subject, $message, $headers )){
+    echo"mail sent ";
+}
+
+?>
