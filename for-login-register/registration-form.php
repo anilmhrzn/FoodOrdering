@@ -25,7 +25,7 @@ session_start();
     </div>
     <div class="whole-page">
      
-        <form method="POST" id="for-form" action="http://localhost/FoodOrdering/for-login-register/post_for_registration.php" onsubmit="event.preventDefault();validation();" >
+        <form method="POST" autocomplete="off" id="for-form" action="http://localhost/FoodOrdering/for-login-register/post_for_registration.php" onsubmit="event.preventDefault();validation();" >
             
             
             <h1 class="text-align-center"> Register</h1>

@@ -11,13 +11,19 @@ if ($_POST) {
         $price = $_POST['price'];
         $description = $_POST['description'];
         $categoryId = $_POST['category_id'];
-        $img_address = './../images/foodImages/' . $_FILES['fileToUpload']['name'];
-        require './image_uploadCheck.php';
-                if (isset($_GET['id'])) {
-                    $id = $_GET['id'];
-                    $sql = "UPDATE food SET `name` = '$foodName',`price` = '$price',`description`='$description', `category_id` = '$categoryId' , image_address = '$img_address' WHERE id = $id";
-                } else {
-
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            if(!empty($_FILES['fileToUpload']['name'])){
+                $img_address = './../images/foodImages/' . $_FILES['fileToUpload']['name'];
+                include './image_uploadCheck.php';
+                $sql = "UPDATE food SET `name` = '$foodName',`price` = '$price',`description`='$description', `category_id` = '$categoryId' , image_address = '$img_address' WHERE id = $id";
+            }
+            else{
+                $sql = "UPDATE food SET `name` = '$foodName',`price` = '$price',`description`='$description', `category_id` = '$categoryId' WHERE id = $id";
+            }
+        } else {
+                $img_address = './../images/foodImages/' . $_FILES['fileToUpload']['name'];
+                include './image_uploadCheck.php';
                     $sql = "INSERT into food(name,price,description,category_id,image_address) VALUES ('$foodName', '$price','$description','$categoryId','$img_address ')";
                 }
                 // TODO:fronted validation left and image inserting not done

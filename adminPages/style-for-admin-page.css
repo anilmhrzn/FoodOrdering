@@ -182,9 +182,9 @@ i.error{
 
 
 /* this is for order page */
-.delivered{
+tr.delivered{
 background-color: green;
 }
-.not-delivered{
+tr.not-delivered{
 background-color: red;
 }
