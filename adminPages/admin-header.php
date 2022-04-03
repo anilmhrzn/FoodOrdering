@@ -20,6 +20,7 @@ function categoryName($category_id) {
 
     <link rel="stylesheet" href="style-for-admin-page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@500&family=Festive&family=Indie+Flower&family=Kaushan+Script&family=Redressed&display=swap" rel="stylesheet">
     <script src="JsForAdminpage.js"></script>
 
 </head>

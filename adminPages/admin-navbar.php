@@ -9,7 +9,7 @@ if(!isset($_SESSION['ADMIN_ID'])){
 
     <nav>
         <span class="company-name">
-            food paradise
+            Food Paradise
         </span>
         <ul>
             <li><a href="homepage.php" id="home-for-navbar" class="options ">Home</a></li>

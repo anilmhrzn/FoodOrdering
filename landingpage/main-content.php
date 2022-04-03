@@ -75,10 +75,7 @@ if (!isset($_SESSION['USER_ID'])) {
             if ($result !== false && $result->num_rows > 0) {
 
                 echo "\"" .$_REQUEST['searched']."\"";
-                // output data of each row
                 while ($row = $result->fetch_assoc()) {
-                    // echo $row['name'];
-                    // echo '<br><h1>' . $row['name'] . '</h1>';
                     ?>
         <div class="for-border">
             <div class='imgFoodSection '>

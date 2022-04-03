@@ -1,11 +1,11 @@
 function viewAndHide(id) {
   if (event.target.value == "view") {
-    console.log(id);
+    // console.log(id);
     document.getElementById(id).style.display = "block";
-    console.log((event.target.value = "hide"));
+    event.target.value = "hide";
   } else {
-    console.log(id);
+    // console.log(id);
     document.getElementById(id).style.display = "none";
-    console.log((event.target.value = "view"));
+    event.target.value = "view";
   }
 }

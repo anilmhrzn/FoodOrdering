@@ -188,3 +188,11 @@ background-color: green;
 tr.not-delivered{
 background-color: red;
 }
+
+.homepage{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
